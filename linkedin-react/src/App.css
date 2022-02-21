@@ -44,11 +44,15 @@
   font-weight: 600;
 }
 
-/* .inputIcon {
-  display: flex;
-  background-color: "#EEF3F8";
+.inputIcon {
   height: 3rem;
-} */
+  display: flex;
+  background-color: "#EEF3F8" !important;
+  align-items: center;
+}
+.inputIcon input:focus {
+  outline-width: 0;
+}
 /* ALI's Styles END  */
 
 /* Gbemi's styles   */
@@ -100,9 +104,9 @@
 }
 
 .profile-hero-btns > button {
-    border-radius: 25px;
-    margin-right: 0.5rem;
-    font-size: 0.9rem;
+  border-radius: 25px;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .martin-profile-hero-main-container > img {
@@ -122,8 +126,7 @@
   color: var(--LI-blue);
 }
 
-
-.martin-profile-icon-large{
+.martin-profile-icon-large {
   font-size: 1.3rem;
 }
 
@@ -131,12 +134,12 @@
   width: 60px;
 }
 
-.martin-profile-main-btn{
+.martin-profile-main-btn {
   background-color: var(--LI-blue) !important;
   border-color: var(--LI-blue) !important;
 }
 
-.martin-profile-outline-btn{
+.martin-profile-outline-btn {
   color: var(--LI-blue) !important;
   border-color: var(--LI-blue) !important;
 }

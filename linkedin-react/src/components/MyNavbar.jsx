@@ -17,21 +17,25 @@ const MyNavbar = () => {
     <Navbar bg="light" expand="lg" className="py-0">
       <Container>
         <BsLinkedin className="ali-linkedIn-logo mr-2" />
-        <div className="inputIcon d-flex align-items-center    ">
-          {/* <input
-            style={{ backgroundColor: "transparent" }}
+        <div
+          style={{ backgroundColor: "#EEF3F8", height: "3rem" }}
+          className="inputIcon "
+        >
+          <BsSearch className="ml-2" />
+          <input
+            style={{ backgroundColor: "transparent", height: "3rem" }}
             type="text"
             placeholder="Search"
-            className="mr-sm-2 border-0"
-          /> */}
-          <Form inline className="py-0 border-0">
+            className="mr-sm-2 border-0 ml-2"
+          />
+          {/* <Form inline className="py-0 border-0">
             <FormControl
               style={{ height: "3rem", backgroundColor: "#EEF3F8" }}
               type="text"
               placeholder="Search"
               className="mr-sm-2"
             />
-          </Form>
+          </Form> */}
         </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
