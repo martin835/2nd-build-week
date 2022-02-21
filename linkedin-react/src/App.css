@@ -1,3 +1,7 @@
+:root {
+  --LI-blue: #0a66c2;
+}
+
 /* ALI's Styles  */
 .App {
   background-color: #0b66c2;
@@ -69,7 +73,7 @@
 }
 
 .martin-color-link-profile {
-  color: #007bff;
+  color: var(--LI-blue);
 }
 
 
@@ -79,6 +83,16 @@
 
 .martin-profile-experience-thumbnail-image {
   width: 60px;
+}
+
+.martin-profile-main-btn{
+  background-color: var(--LI-blue) !important;
+  border-color: var(--LI-blue) !important;
+}
+
+.martin-profile-outline-btn{
+  color: var(--LI-blue) !important;
+  border-color: var(--LI-blue) !important;
 }
 
 /* Martin's Styles END */

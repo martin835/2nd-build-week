@@ -20,7 +20,9 @@ function App() {
               experience.
             </p>
             <p>
-              <span className="text-secondary">Slovakia | </span>
+              <span className="text-secondary">
+                Slovakia <i class="bi bi-dot"></i>{" "}
+              </span>
               <strong className="martin-color-link-profile">
                 Contact info
               </strong>
@@ -29,9 +31,16 @@ function App() {
               <strong>500+ connections</strong>
             </p>
             <div className="profile-hero-btns">
-              <Button variant="primary">Open to</Button>
-              <Button variant="outline-primary">Add profile section</Button>
-              <Button variant="outline-secondary">More</Button>
+              <Button variant="primary" className="martin-profile-main-btn">
+                Open to
+              </Button>
+              <Button
+                variant="outline-primary"
+                className="martin-profile-outline-btn"
+              >
+                Add profile section
+              </Button>
+              <Button variant="outline-secondary">More...</Button>
             </div>
           </Col>
 
