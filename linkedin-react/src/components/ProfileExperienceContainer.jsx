@@ -4,7 +4,7 @@ import OneExperienceCard from "./OneExperienceCard";
 
 function ProfileExperienceContainer() {
   return (
-    <div className="p-3 border border-secondary rounded-lg  mt-3">
+    <div className="p-3 border border-secondary rounded-lg  mt-3 mb-5">
       <div className="d-flex mb-4">
         <h4 className="mr-auto">Experience</h4>
         <div className="martin-profile-icon-large mr-4">
@@ -15,6 +15,10 @@ function ProfileExperienceContainer() {
         </div>
       </div>
       <OneExperienceCard/>
+      <OneExperienceCard/>
+      <OneExperienceCard/>
+      <OneExperienceCard/>
+
     </div>
   );
 }
