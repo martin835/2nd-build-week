@@ -7,30 +7,32 @@ import {
   BsPersonCircle,
   BsGrid3X3GapFill,
   BsCaretDownFill,
+  BsSearch,
 } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
-import {
-  Container,
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Badge,
-} from "react-bootstrap";
+import { Container, Navbar, Nav, Form, FormControl } from "react-bootstrap";
 
 const MyNavbar = () => {
   return (
     <Navbar bg="light" expand="lg" className="py-0">
       <Container>
         <BsLinkedin className="ali-linkedIn-logo mr-2" />
-        <Form inline className="py-0">
-          <FormControl
-            style={{ height: "3rem", backgroundColor: "#EEF3F8" }}
+        <div className="inputIcon d-flex align-items-center    ">
+          {/* <input
+            style={{ backgroundColor: "transparent" }}
             type="text"
             placeholder="Search"
-            className="mr-sm-2"
-          />
-        </Form>
+            className="mr-sm-2 border-0"
+          /> */}
+          <Form inline className="py-0 border-0">
+            <FormControl
+              style={{ height: "3rem", backgroundColor: "#EEF3F8" }}
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2"
+            />
+          </Form>
+        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
