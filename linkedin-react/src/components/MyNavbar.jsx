@@ -9,14 +9,7 @@ import {
   BsCaretDownFill,
 } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
-import {
-  Container,
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Badge,
-} from "react-bootstrap";
+import { Container, Navbar, Nav, Form, FormControl } from "react-bootstrap";
 
 const MyNavbar = () => {
   return (

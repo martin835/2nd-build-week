@@ -29,12 +29,22 @@ function App() {
 
         <Col xs={5}>
           <div className="mt-3">
-            <img className="martin-profile-hero-thumbnail-image mr-2" src={require("../assets/placeholder.jpeg")} />
-            <span><strong>Employment at Random Company</strong></span>
+            <img
+              className="martin-profile-hero-thumbnail-image mr-2"
+              src={require("../assets/placeholder.jpeg")}
+            />
+            <span>
+              <strong>Employment at Random Company</strong>
+            </span>
           </div>
           <div className="mt-3">
-            <img className="martin-profile-hero-thumbnail-image mr-2" src={require("../assets/strive-logo.jpeg")} />
-            <span><strong>Strive School</strong></span>
+            <img
+              className="martin-profile-hero-thumbnail-image mr-2"
+              src={require("../assets/strive-logo.jpeg")}
+            />
+            <span>
+              <strong>Strive School</strong>
+            </span>
           </div>
         </Col>
       </Row>

@@ -4,9 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 import MyNavbar from "./components/MyNavbar";
 import SidebarEdit from "./components/SidebarEdit";
-import ProfileMainHero from './components/ProfileMainHero'
-
-
+import ProfileMainHero from "./components/ProfileMainHero";
 
 function App() {
   return (
@@ -15,12 +13,9 @@ function App() {
       <Container>
         <h1>LINKED IN</h1>
         <Row>
-
           <Col xs={9}>
-           <ProfileMainHero/>
+            <ProfileMainHero />
           </Col>
-
-          <Col xs={9}>{/*  <ProfileMainSection/> */}</Col>
 
           <Col xs={3}>
             <SidebarEdit />
