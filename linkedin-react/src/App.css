@@ -1,16 +1,46 @@
 /* ALI's Styles  */
 
-
 /* ALI's Styles END  */
-
 
 /* Gbemi's styles   */
 
+.Gbemi-container {
+  border-radius: 10px;
+  background-color: white;
+  padding-left: 15px;
+}
+
+.Gbemi-button1 {
+  border-radius: 18px !important;
+  margin-bottom: 15px;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+
+.Gbemi-image1 {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.Gbemi-h6 {
+  font-weight: 700 !important;
+}
+
+.Gbemi-profile-card-description {
+  font-size: 13px;
+  color: grey;
+}
+
+.Gbemi-hr {
+  height: 300px;
+  border-top: 1px solid red;
+  background-color: gray;
+}
 
 /* Gbemi's styles END  */
 
-
 /* Martin's Styles */
-
 
 /* Martin's Styles END */

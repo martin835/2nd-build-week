@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import {Container, Row, Col} from 'react-bootstrap'
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "react-bootstrap";
+import ProfileList from "./components/ProfileList";
 
 function App() {
   return (
     <>
-     {/*  <MyNavbar/> */}
+      {/*  <MyNavbar/> */}
       <Container>
-        <h1>LINKED IN</h1>
         <Row>
-          <Col xs={9}>
-           {/*  <ProfileMainSection/> */}
-          </Col>
+          <Col xs={9}>{/*  <ProfileMainSection/> */}</Col>
           <Col xs={3}>
-           {/*  <ProfileSideSection/> */}
+            <ProfileList />
           </Col>
         </Row>
       </Container>
-
     </>
   );
 }
