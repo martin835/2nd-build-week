@@ -15,7 +15,7 @@ function ProfileMainHero() {
 
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/me",
+        "https://striveschool-api.herokuapp.com/api/profile/5fc4baecb708c200175de89b",
         {
           method: "GET",
           headers: {
@@ -48,14 +48,14 @@ function ProfileMainHero() {
             backgroundImage: "url(" + require("../assets/hero-pic.jpeg") + ")",
           }}
         >
-          <img src={require("../assets/avatar-profile-hero.webp")} />
+          <img src={info.image} />
         </div>
         <Row className="mt-5 p-3">
           <Col xs={7}>
-            <h2>{info.name} {info.surname}</h2>
-            <p>
-              {info.bio}
-            </p>
+            <h2>
+              {info.name} {info.surname}
+            </h2>
+            <p className="martin-profile-hero-desc">{info.bio}</p>
             <p>
               <span className="text-secondary">
                 {info.area} <i class="bi bi-dot"></i>{" "}
@@ -68,12 +68,15 @@ function ProfileMainHero() {
               <strong>500+ connections</strong>
             </p>
             <div className="profile-hero-btns">
-              <Button variant="primary" className="martin-profile-main-btn">
+              <Button
+                variant="primary"
+                className="martin-profile-main-btn mb-2 mb-lg-0"
+              >
                 Open to
               </Button>
               <Button
                 variant="outline-primary"
-                className="martin-profile-outline-btn"
+                className="martin-profile-outline-btn mb-2 mb-lg-0"
               >
                 Add profile section
               </Button>

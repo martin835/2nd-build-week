@@ -127,6 +127,13 @@
   color: var(--LI-blue);
 }
 
+.martin-profile-hero-desc {
+    display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .martin-profile-icon-large {
   font-size: 1.3rem;
 }
