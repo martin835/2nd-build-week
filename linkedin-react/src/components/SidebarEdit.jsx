@@ -3,7 +3,7 @@ import { BsQuestionCircleFill } from "react-icons/bs";
 
 const SidebarEdit = () => {
   return (
-    <Container>
+    <Container className="mt-3">
       <Row>
         <>
           <div className="ali-side-edit w-100 px-2 border">
