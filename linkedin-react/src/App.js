@@ -10,8 +10,7 @@ function App() {
   return (
     <>
       <MyNavbar />
-      <Container>
-        <h1>LINKED IN</h1>
+      <Container className="mt-4">
         <Row>
           <Col xs={9}>
             <ProfileMainHero />
