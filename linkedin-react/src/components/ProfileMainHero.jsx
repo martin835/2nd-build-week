@@ -1,9 +1,47 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
 
-function App() {
+function ProfileMainHero() {
+
+  const [info, setInfo] = useState({})
+
+  useEffect(()=>{
+    loadInfo();
+  },[])
+
+  const loadInfo= async () => {
+    console.log("i am mounted");
+    
+
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/me",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjEzNGI2OWJlNDBiNTAwMTViNmM5MzUiLCJpYXQiOjE2NDU0MzE2NTcsImV4cCI6MTY0NjY0MTI1N30.sW4qGqsabPColujp6kpA3P6pfCQ-VN9D8e5WEW1RdTI",
+          },
+        }
+      );
+      if (response.ok) {
+        let data = await response.json();
+        console.log(data)
+        setInfo(data)
+     
+      } else {
+        alert('something went wrong :(')
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   return (
     <>
-      <div className="border  rounded-lg bg-white mt-3">
+      <div className="martin-profile-main-br bg-white mt-3">
         <div
           className="martin-profile-hero-main-container"
           style={{
@@ -14,14 +52,13 @@ function App() {
         </div>
         <Row className="mt-5 p-3">
           <Col xs={7}>
-            <h2>Martin Konecny</h2>
+            <h2>{info.name} {info.surname}</h2>
             <p>
-              I am passionate about creating web applications with great user
-              experience.
+              {info.bio}
             </p>
             <p>
               <span className="text-secondary">
-                Slovakia <i class="bi bi-dot"></i>{" "}
+                {info.area} <i class="bi bi-dot"></i>{" "}
               </span>
               <strong className="martin-color-link-profile">
                 Contact info
@@ -70,5 +107,5 @@ function App() {
   );
 }
 
-export default App;
+export default ProfileMainHero;
 

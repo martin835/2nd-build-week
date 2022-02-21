@@ -95,6 +95,7 @@
   background-position: center 45%;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 15px 15px 0 0;
   height: 30vh;
   position: relative;
 }
@@ -139,6 +140,14 @@
 .martin-profile-outline-btn{
   color: var(--LI-blue) !important;
   border-color: var(--LI-blue) !important;
+}
+
+.martin-profile-main-br{
+  border-radius: 15px;
+}
+
+.martin-profile-experience-container{
+  border-radius: 15px;
 }
 
 /* Martin's Styles END */
