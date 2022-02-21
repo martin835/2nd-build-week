@@ -15,7 +15,7 @@ function ProfileMainHero() {
 
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/me",
+        "https://striveschool-api.herokuapp.com/api/profile/5fc4af46b708c200175de88f",
         {
           method: "GET",
           headers: {
