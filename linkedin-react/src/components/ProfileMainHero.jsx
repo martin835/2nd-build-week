@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 function App() {
   return (
     <>
-      <div className="border border-secondary rounded-lg  mt-3">
+      <div className="border  rounded-lg bg-white mt-3">
         <div
           className="martin-profile-hero-main-container"
           style={{
