@@ -39,6 +39,12 @@
   background-color: white;
   font-weight: 600;
 }
+
+.inputIcon {
+  display: flex;
+  background-color: "#EEF3F8";
+  height: 3rem;
+}
 /* ALI's Styles END  */
 
 /* Gbemi's styles   */
