@@ -5,17 +5,25 @@ import ProfileList from "./components/ProfileList";
 
 import MyNavbar from "./components/MyNavbar";
 import SidebarEdit from "./components/SidebarEdit";
-import ProfileMainHero from "./components/ProfileMainHero";
+
+import ProfileMainHero from './components/ProfileMainHero'
+import ProfileExperienceContainer from "./components/ProfileExperienceContainer";
+
+
 
 function App() {
   return (
     <>
-      <MyNavbar />
+      <MyNavbar />  
+
       <Container className="mt-4">
+
         <Row>
           <Col xs={9}>
-            <ProfileMainHero />
+           <ProfileMainHero/>
+           <ProfileExperienceContainer/>
           </Col>
+
           <Col xs={3}>
             <SidebarEdit />
             <ProfileList />

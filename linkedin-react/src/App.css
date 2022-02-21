@@ -1,3 +1,7 @@
+:root {
+  --LI-blue: #0a66c2;
+}
+
 /* ALI's Styles  */
 .App {
   background-color: #0b66c2;
@@ -96,9 +100,9 @@
 }
 
 .profile-hero-btns > button {
-  border-radius: 25px;
-  margin-right: 0.5rem;
-  font-size: 0.7rem;
+    border-radius: 25px;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .martin-profile-hero-main-container > img {
@@ -113,4 +117,28 @@
 .martin-profile-hero-thumbnail-image {
   width: 42px;
 }
+
+.martin-color-link-profile {
+  color: var(--LI-blue);
+}
+
+
+.martin-profile-icon-large{
+  font-size: 1.3rem;
+}
+
+.martin-profile-experience-thumbnail-image {
+  width: 60px;
+}
+
+.martin-profile-main-btn{
+  background-color: var(--LI-blue) !important;
+  border-color: var(--LI-blue) !important;
+}
+
+.martin-profile-outline-btn{
+  color: var(--LI-blue) !important;
+  border-color: var(--LI-blue) !important;
+}
+
 /* Martin's Styles END */
