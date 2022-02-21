@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Container, Row, Col} from 'react-bootstrap'
+import ProfileMainHero from './components/ProfileMainHero'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <h1>LINKED IN</h1>
         <Row>
           <Col xs={9}>
-           {/*  <ProfileMainSection/> */}
+           <ProfileMainHero/>
           </Col>
           <Col xs={3}>
            {/*  <ProfileSideSection/> */}
