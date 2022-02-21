@@ -49,7 +49,7 @@
 .profile-hero-btns > button {
     border-radius: 25px;
     margin-right: 0.5rem;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 }
 
 
@@ -67,6 +67,20 @@
 .martin-profile-hero-thumbnail-image {
     width: 42px;
 }
+
+.martin-color-link-profile {
+  color: #007bff;
+}
+
+
+.martin-profile-icon-large{
+  font-size: 1.3rem;
+}
+
+.martin-profile-experience-thumbnail-image {
+  width: 50px;
+}
+
 /* Martin's Styles END */
 
 

@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import MyNavbar from "./components/MyNavbar";
 import SidebarEdit from "./components/SidebarEdit";
 import ProfileMainHero from './components/ProfileMainHero'
+import ProfileExperienceContainer from "./components/ProfileExperienceContainer";
 
 
 
@@ -13,14 +14,15 @@ function App() {
     <>
       <MyNavbar />
       <Container>
-        <h1>LINKED IN</h1>
+     
         <Row>
 
           <Col xs={9}>
            <ProfileMainHero/>
+           <ProfileExperienceContainer/>
           </Col>
 
-          <Col xs={9}>{/*  <ProfileMainSection/> */}</Col>
+        
 
           <Col xs={3}>
             <SidebarEdit />
