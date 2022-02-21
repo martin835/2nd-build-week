@@ -1,16 +1,40 @@
 /* ALI's Styles  */
+.App {
+  background-color: #0b66c2;
+}
+.ali-linkedIn-logo {
+  width: 3rem;
+  height: 3rem;
+  color: #0b66c2;
+}
 
+.ali-navbar-icons {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: rgb(114, 110, 110);
+}
+
+.ali-navbar-icon-description {
+  color: rgb(115, 110, 110);
+}
+
+.ali-navbar-notification {
+  border: 6px rgb(172, 4, 4) solid;
+  padding: 4px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0%;
+  top: 8%;
+}
 
 /* ALI's Styles END  */
 
-
 /* Gbemi's styles   */
-
 
 /* Gbemi's styles END  */
 
-
 /* Martin's Styles */
+
 
 .martin-profile-hero-main-container{
 
@@ -44,3 +68,5 @@
     width: 42px;
 }
 /* Martin's Styles END */
+
+
