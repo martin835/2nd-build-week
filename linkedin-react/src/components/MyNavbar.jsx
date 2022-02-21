@@ -11,14 +11,11 @@ import {
 import { AiFillHome } from "react-icons/ai";
 import {
   Container,
-  Row,
-  Col,
   Navbar,
   Nav,
-  NavDropdown,
   Form,
   FormControl,
-  Button,
+  Badge,
 } from "react-bootstrap";
 
 const MyNavbar = () => {
@@ -37,7 +34,8 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <div className="d-flex flex-column align-items-center ml-5 py-2">
+            <div className="d-flex flex-column align-items-center ml-5 py-2 position-relative">
+              <div className="ali-navbar-notification"></div>
               <AiFillHome className="ali-navbar-icons " />
               <p className="my-0 ali-navbar-icon-description">Home</p>
             </div>
