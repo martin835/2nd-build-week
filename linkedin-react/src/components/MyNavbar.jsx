@@ -18,15 +18,24 @@ const MyNavbar = () => {
       <Container>
         <BsLinkedin className="ali-linkedIn-logo mr-2" />
         <div
-          style={{ backgroundColor: "#EEF3F8", height: "3rem" }}
+          style={{
+            backgroundColor: "#EEF4F1",
+            height: "2rem",
+            borderRadius: "6px",
+            width: "20rem",
+          }}
           className="inputIcon "
         >
-          <BsSearch className="ml-2" />
+          <BsSearch className="ml-3" />
           <input
-            style={{ backgroundColor: "transparent", height: "3rem" }}
+            style={{
+              backgroundColor: "transparent",
+              height: "2rem",
+              fontSize: "0.8rem",
+            }}
             type="text"
             placeholder="Search"
-            className="mr-sm-2 border-0 ml-2"
+            className="mr-sm-2 border-0 ml-3"
           />
           {/* <Form inline className="py-0 border-0">
             <FormControl
@@ -40,28 +49,28 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <div className="d-flex flex-column align-items-center ml-5 py-2 position-relative">
+            <div className="d-flex flex-column align-items-center ml-3 py-2 position-relative">
               <div className="ali-navbar-notification"></div>
               <AiFillHome className="ali-navbar-icons " />
               <p className="my-0 ali-navbar-icon-description">Home</p>
             </div>
-            <div className="d-flex flex-column align-items-center ml-5 py-2">
+            <div className="d-flex flex-column align-items-center ml-3 py-2">
               <BsFillPeopleFill className="ali-navbar-icons" />
               <p className="my-0 ali-navbar-icon-description">My Network</p>
             </div>
-            <div className="d-flex flex-column align-items-center ml-5 py-2">
+            <div className="d-flex flex-column align-items-center ml-3 py-2">
               <BsBriefcaseFill className="ali-navbar-icons" />
               <p className="my-0 ali-navbar-icon-description">Jobs</p>
             </div>
-            <div className="d-flex flex-column align-items-center ml-5 py-2">
+            <div className="d-flex flex-column align-items-center ml-3 py-2">
               <BsFillChatRightTextFill className="ali-navbar-icons" />
               <p className="my-0 ali-navbar-icon-description">Messaging</p>
             </div>
-            <div className="d-flex flex-column align-items-center ml-5 py-2">
+            <div className="d-flex flex-column align-items-center ml-3 py-2">
               <BsFillBellFill className="ali-navbar-icons" />
               <p className="my-0 ali-navbar-icon-description">Notifications</p>
             </div>
-            <div className="d-flex flex-column align-items-center ml-5 py-2">
+            <div className="d-flex flex-column align-items-center ml-3 py-2">
               <BsPersonCircle className="ali-navbar-icons" />
               <p className="my-0 ali-navbar-icon-description">
                 Me
