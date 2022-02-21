@@ -4,10 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 import MyNavbar from "./components/MyNavbar";
 import SidebarEdit from "./components/SidebarEdit";
-import ProfileMainHero from './components/ProfileMainHero'
+import ProfileMainHero from "./components/ProfileMainHero";
 import ProfileExperienceContainer from "./components/ProfileExperienceContainer";
-import ProfileList from "./components/ProfileList"
-
+import ProfileList from "./components/ProfileList";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,10 +22,11 @@ function App() {
 
           <Col className="d-none d-lg-block" lg={3}>
             <SidebarEdit />
-            <ProfileList/>
+            <ProfileList />
           </Col>
         </Row>
       </Container>
+      <Footer />
     </>
   );
 }

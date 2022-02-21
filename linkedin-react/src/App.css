@@ -53,6 +53,58 @@
 .inputIcon input:focus {
   outline-width: 0;
 }
+
+.linkedIN {
+  color: var(--LI-blue);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footer-logo {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: var(--LI-blue);
+}
+
+.footer-link {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.footer-right-desc {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.footer-right-small-desc {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.footer-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.2rem;
+}
+.footer-icon2 {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.2rem;
+}
+.select-language {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.language-selector {
+  width: 100%;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.corporation {
+  font-size: 0.65rem;
+  font-weight: 200;
+}
 /* ALI's Styles END  */
 
 /* Gbemi's styles   */
@@ -128,7 +180,7 @@
 }
 
 .martin-profile-hero-desc {
-    display: -webkit-box;
+  display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -152,11 +204,11 @@
   border-color: var(--LI-blue) !important;
 }
 
-.martin-profile-main-br{
+.martin-profile-main-br {
   border-radius: 15px;
 }
 
-.martin-profile-experience-container{
+.martin-profile-experience-container {
   border-radius: 15px;
 }
 

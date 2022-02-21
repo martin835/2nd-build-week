@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { BsQuestionCircleFill } from "react-icons/bs";
 
 const SidebarEdit = () => {
