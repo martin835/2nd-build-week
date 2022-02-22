@@ -12,15 +12,18 @@ import {
 import { AiFillHome } from "react-icons/ai";
 import { Container, Navbar, Nav, Form, FormControl } from "react-bootstrap";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const MyNavbar = ({ query, setQuery }) => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       setQuery(query2);
+      navigate("/search");
     }
   };
 
   const [query2, setQuery2] = useState(query);
+  const navigate = useNavigate();
 
   return (
     <Navbar bg="light" expand="lg" className="py-0">
@@ -62,9 +65,11 @@ const MyNavbar = ({ query, setQuery }) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <div className="d-flex flex-column align-items-center ml-3 py-2 position-relative">
-              <div className="ali-navbar-notification"></div>
-              <AiFillHome className="ali-navbar-icons " />
-              <p className="my-0 ali-navbar-icon-description">Home</p>
+              <Link to={"/"}>
+                <div className="ali-navbar-notification"></div>
+                <AiFillHome className="ali-navbar-icons " />
+                <p className="my-0 ali-navbar-icon-description">Home</p>
+              </Link>
             </div>
             <div className="d-flex flex-column align-items-center ml-3 py-2">
               <BsFillPeopleFill className="ali-navbar-icons" />

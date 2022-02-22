@@ -2,16 +2,14 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
 function ProfileMainHero() {
+  const [info, setInfo] = useState({});
+  const [user, setUser] = useState("");
 
-  const [info, setInfo] = useState({})
-  const [user, setUser] = useState("")
-
-  useEffect(()=>{
+  useEffect(() => {
     loadInfo();
- 
-  },[])
+  }, []);
 
-  const loadInfo= async () => {
+  const loadInfo = async () => {
     let user = "me";
     //5fc4af46b708c200175de88f
     try {
@@ -38,8 +36,6 @@ function ProfileMainHero() {
     }
   };
 
-  
-
   return (
     <>
       <div className="martin-profile-main-br bg-white mt-3">
@@ -59,7 +55,7 @@ function ProfileMainHero() {
             <p className="martin-profile-hero-desc">{info.bio}</p>
             <p>
               <span className="text-secondary">
-                {info.area} <i class="bi bi-dot"></i>{" "}
+                {info.area} <i className="bi bi-dot"></i>{" "}
               </span>
               <strong className="martin-color-link-profile">
                 Contact info
@@ -112,4 +108,3 @@ function ProfileMainHero() {
 }
 
 export default ProfileMainHero;
-

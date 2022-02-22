@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import SearchCard from "./SearchCard";
+import { useNavigate } from "react-router-dom";
 
 const Search = ({ query }) => {
   const [arrayOfPeople, setArrayOfPeople] = useState([]);
