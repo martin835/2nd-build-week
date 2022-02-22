@@ -9,7 +9,7 @@ const SidebarEdit = () => {
         <>
           <div className="ali-side-edit w-100 px-2 border hidden">
             <p className="my-0 py-3  border-bottom d-flex justify-content-between">
-              Edit public profile & Url
+              Edit public Profile & Url
               <BsQuestionCircleFill />
             </p>
             <p className="my-0 py-3 d-flex justify-content-between">
