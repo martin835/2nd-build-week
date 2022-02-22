@@ -27,7 +27,7 @@ const Search = ({ query }) => {
       console.log(error);
     }
   };
-  useEffect(() => searchQuery(), [query]);
+  useEffect(() => searchQuery, [query]);
 
   return (
     <Container className="ali-search-container mt-3 py-3">
