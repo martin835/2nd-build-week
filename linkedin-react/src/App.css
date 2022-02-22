@@ -189,6 +189,19 @@
 
 .martin-profile-icon-large {
   font-size: 1.3rem;
+
+}
+
+.martin-profile-icon-large > i {
+  padding: 10px;
+  
+}
+
+.martin-profile-icon-large:hover {
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 40px;
+
 }
 
 .martin-profile-experience-thumbnail-image {
@@ -211,6 +224,10 @@
 
 .martin-profile-experience-container {
   border-radius: 15px;
+}
+
+.martin-width-45 {
+  width: 45%;
 }
 
 /* Martin's Styles END */
