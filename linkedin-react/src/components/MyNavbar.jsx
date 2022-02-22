@@ -11,8 +11,17 @@ import {
 } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
 import { Container, Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { useState } from "react";
 
-const MyNavbar = () => {
+const MyNavbar = ({ query, setQuery }) => {
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      setQuery(query2);
+    }
+  };
+
+  const [query2, setQuery2] = useState("");
+
   return (
     <Navbar bg="light" expand="lg" className="py-0">
       <Container>
@@ -34,6 +43,9 @@ const MyNavbar = () => {
               fontSize: "0.8rem",
             }}
             type="text"
+            value={query2}
+            onChange={(e) => setQuery2(e.target.value)}
+            onKeyDown={(e) => handleKeyDown(e)}
             placeholder="Search"
             className="mr-sm-2 border-0 ml-3"
           />

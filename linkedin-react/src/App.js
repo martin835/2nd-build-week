@@ -10,15 +10,17 @@ import ProfileList from "./components/ProfileList";
 import Footer from "./components/Footer";
 import SearchCard from "./components/SearchCard";
 import Search from "./components/Search";
+import { useState } from "react";
 
 function App() {
+  const [query, setQuery] = useState("");
   return (
     <>
-      <MyNavbar />
+      <MyNavbar query={query} setQuery={setQuery} />
       <Container>
         <Row>
           <Col xs={12} lg={9}>
-            <Search />
+            {/* <Search query={query} /> */}
             <ProfileMainHero />
             <ProfileExperienceContainer />
           </Col>
