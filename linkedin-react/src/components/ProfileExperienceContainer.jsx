@@ -1,9 +1,13 @@
 import { Modal, Button, Form } from "react-bootstrap";
 import OneExperienceCard from "./OneExperienceCard";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"
 
 
 function ProfileExperienceContainer() {
+
+  const params = useParams();
+  console.log(params.userId);
 
   const [experiences, setExperiences] = useState(null);
   const [newExperience, setNewExperience] = useState({    
@@ -26,8 +30,8 @@ function ProfileExperienceContainer() {
    }, []);
 
    const loadExperiences = async () => {
-     let user = "62134b69be40b50015b6c935";
-     //5fc4af46b708c200175de88f
+     let user = params.userId;
+    
      try {
        let response = await fetch(
          "https://striveschool-api.herokuapp.com/api/profile/" +
@@ -59,7 +63,7 @@ function ProfileExperienceContainer() {
       console.log(newExperience);
    
 
-           let user = "62134b69be40b50015b6c935";
+           let user = params.userId;
            //5fc4af46b708c200175de88f
            
           
@@ -84,6 +88,14 @@ function ProfileExperienceContainer() {
                console.log(data);
                loadExperiences();
                setLgShow(false);
+               setNewExperience({
+                 role: "",
+                 company: "",
+                 startDate: "",
+                 endDate: null,
+                 description: "",
+                 area: "",
+               });
               
              } else {
                alert("something went wrong :(");
@@ -101,7 +113,7 @@ function ProfileExperienceContainer() {
     
     console.log(newExperience);
 
-    let user = "62134b69be40b50015b6c935";
+    let user = params.userId;
     //5fc4af46b708c200175de88f
     try {
       let response = await fetch(
@@ -137,7 +149,7 @@ function ProfileExperienceContainer() {
    }
 
    const handleEdit = async () => {
-      let user = "62134b69be40b50015b6c935";
+      let user = params.userId;
       //5fc4af46b708c200175de88f
 
       try {
@@ -171,7 +183,7 @@ function ProfileExperienceContainer() {
 
    const deleteJob = async ()=> {
 
-     let user = "62134b69be40b50015b6c935";
+     let user = params.userId;
      //5fc4af46b708c200175de88f
 
      try {
@@ -242,7 +254,7 @@ function ProfileExperienceContainer() {
         size="lg"
         show={lgShow}
         onHide={() => {
-          setEditMode(!editMode);
+          setEditMode(false);
           setLgShow(false);
           setNewExperience({
             role: "",

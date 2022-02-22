@@ -1,7 +1,11 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function ProfileMainHero() {
+
+  const params = useParams();
+ 
   const [info, setInfo] = useState({});
   const [user, setUser] = useState("");
 
@@ -10,7 +14,7 @@ function ProfileMainHero() {
   }, []);
 
   const loadInfo = async () => {
-    let user = "me";
+    let user = params.userId ? params.userId : "me";
     //5fc4af46b708c200175de88f
     try {
       let response = await fetch(
