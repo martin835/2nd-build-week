@@ -74,7 +74,7 @@ const Footer = () => {
               </div>
             </Col>
             <Col xs={6}>
-              <label for="language" className="select-language my-0">
+              <label htmlFor="language" className="select-language my-0">
                 Select Language
               </label>
               <select id="language" className="language-selector py-1">
