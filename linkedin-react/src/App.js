@@ -8,6 +8,8 @@ import ProfileMainHero from "./components/ProfileMainHero";
 import ProfileExperienceContainer from "./components/ProfileExperienceContainer";
 import ProfileList from "./components/ProfileList";
 import Footer from "./components/Footer";
+import SearchCard from "./components/SearchCard";
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Container>
         <Row>
           <Col xs={12} lg={9}>
+            <Search />
             <ProfileMainHero />
             <ProfileExperienceContainer />
           </Col>
