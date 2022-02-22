@@ -1,10 +1,6 @@
-import { Container, Row, Col } from "react-bootstrap";
-
+import { Row, Col } from "react-bootstrap";
 
 function OneExperienceCard(props) {
-
- 
-
   return (
     <>
       <Row className="mb-3">
@@ -17,6 +13,7 @@ function OneExperienceCard(props) {
                   ? props.image
                   : require("../assets/placeholder.jpeg")
               }
+              alt=""
             />
           </div>
         </Col>
@@ -33,7 +30,10 @@ function OneExperienceCard(props) {
             </Col>
             <Col xs={2}>
               {props.editMode && (
-                <div className="martin-profile-icon-large mr-4" onClick={() => props.editJob(props.id)}>
+                <div
+                  className="martin-profile-icon-large mr-4"
+                  onClick={() => props.editJob(props.id)}
+                >
                   <i className="bi bi-pencil"></i>
                 </div>
               )}
