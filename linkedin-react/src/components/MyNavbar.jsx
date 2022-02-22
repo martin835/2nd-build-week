@@ -20,7 +20,7 @@ const MyNavbar = ({ query, setQuery }) => {
     }
   };
 
-  const [query2, setQuery2] = useState("");
+  const [query2, setQuery2] = useState(query);
 
   return (
     <Navbar bg="light" expand="lg" className="py-0">
