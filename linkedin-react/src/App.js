@@ -25,7 +25,7 @@ function App() {
               <>
                 <Route path="/search" element={<Search query={query} />} />
                 <Route
-                  path="/in/me/"
+                  path="/"
                   element={
                     <div>
                       <ProfileMainHero />
