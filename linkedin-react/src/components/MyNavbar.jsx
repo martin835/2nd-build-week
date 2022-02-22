@@ -64,13 +64,13 @@ const MyNavbar = ({ query, setQuery }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <div className="d-flex flex-column align-items-center ml-3 py-2 position-relative">
-              <Link to={"/"}>
+            <Link to={"/"}>
+              <div className="d-flex flex-column align-items-center ml-3 py-2 position-relative">
                 <div className="ali-navbar-notification"></div>
                 <AiFillHome className="ali-navbar-icons " />
                 <p className="my-0 ali-navbar-icon-description">Home</p>
-              </Link>
-            </div>
+              </div>
+            </Link>
             <div className="d-flex flex-column align-items-center ml-3 py-2">
               <BsFillPeopleFill className="ali-navbar-icons" />
               <p className="my-0 ali-navbar-icon-description">My Network</p>

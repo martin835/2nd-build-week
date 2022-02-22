@@ -16,6 +16,7 @@
   width: 1.4rem;
   height: 1.4rem;
   color: rgb(114, 110, 110);
+  position: relative;
 }
 
 .ali-navbar-icon-description {
@@ -234,19 +235,16 @@
 
 .martin-profile-icon-large {
   font-size: 1.3rem;
-
 }
 
 .martin-profile-icon-large > i {
   padding: 10px;
-  
 }
 
 .martin-profile-icon-large:hover {
   cursor: pointer;
   background-color: lightgray;
   border-radius: 40px;
-
 }
 
 .martin-profile-experience-thumbnail-image {

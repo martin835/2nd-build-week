@@ -23,7 +23,7 @@ function App() {
               <>
                 <Route path="/search" element={<Search query={query} />} />
                 <Route
-                  path="/"
+                  path="/:userId"
                   element={
                     <div>
                       <ProfileMainHero />

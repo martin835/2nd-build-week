@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import SearchCard from "./SearchCard";
-import { useNavigate } from "react-router-dom";
 
 const Search = ({ query }) => {
   const [arrayOfPeople, setArrayOfPeople] = useState([]);
@@ -31,20 +30,22 @@ const Search = ({ query }) => {
   useEffect(() => searchQuery, [query]);
 
   return (
-    <Container className="ali-search-container mt-3 py-3">
+    <Container className="ali-search-container my-3 py-3">
       <Row>
         {arrayOfPeople
-          .filter((p) => p.name.toLowerCase().includes(query))
-          .map((person) => (
-            <SearchCard
-              name={person.name}
-              surname={person.surname}
-              image={person.image}
-              key={person._id}
-              title={person.title}
-              location={person.area}
-            />
-          ))}
+          .filter((p) => p.name.toLowerCase().includes(query.toLowerCase()))
+          .map((person) => {
+            return (
+              <SearchCard
+                name={person.name}
+                surname={person.surname}
+                image={person.image}
+                keyID={person._id}
+                title={person.title}
+                location={person.area}
+              />
+            );
+          })}
 
         {/* <SearchCard />
         <SearchCard /> */}
