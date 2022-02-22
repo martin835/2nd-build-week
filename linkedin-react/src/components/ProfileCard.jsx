@@ -2,7 +2,7 @@ import { Row, Col, Button } from "react-bootstrap";
 
 const ProfileCard = ({ profiles }) => {
   return (
-    <Row>
+    <Row key={profiles._id}>
       <Col xs={3}>
         <img
           className="Gbemi-image1"
