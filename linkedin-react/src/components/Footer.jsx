@@ -5,7 +5,6 @@ import {
   BsFillGearFill,
 } from "react-icons/bs";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { RiSettings4Fill } from "react-icons/ri";
 
 const Footer = () => {
   return (
