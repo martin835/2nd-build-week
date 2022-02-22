@@ -83,6 +83,7 @@ function ProfileExperienceContainer() {
                let data = await response.json();
                console.log(data);
                loadExperiences();
+               setLgShow(false);
               
              } else {
                alert("something went wrong :(");
@@ -168,6 +169,39 @@ function ProfileExperienceContainer() {
 
    }
 
+   const deleteJob = async ()=> {
+
+     let user = "62134b69be40b50015b6c935";
+     //5fc4af46b708c200175de88f
+
+     try {
+       let response = await fetch(
+         "https://striveschool-api.herokuapp.com/api/profile/" +
+           user +
+           "/experiences/" +
+           idOfExperience,
+         {
+           method: "DELETE",
+           headers: {
+             "Content-Type": "application/json",
+             Authorization:
+               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjEzNGI2OWJlNDBiNTAwMTViNmM5MzUiLCJpYXQiOjE2NDU0MzE2NTcsImV4cCI6MTY0NjY0MTI1N30.sW4qGqsabPColujp6kpA3P6pfCQ-VN9D8e5WEW1RdTI",
+           }
+          }
+       );
+       if (response.ok) {
+         loadExperiences();
+         setLgShow(false);
+       } else {
+         alert("something went wrong :(");
+       }
+     } catch (error) {
+       console.log(error);
+     }
+
+
+   }
+
   
 
   return (
@@ -207,7 +241,8 @@ function ProfileExperienceContainer() {
       <Modal
         size="lg"
         show={lgShow}
-        onHide={() => { setEditMode(!editMode);          
+        onHide={() => {
+          setEditMode(!editMode);
           setLgShow(false);
           setNewExperience({
             role: "",
@@ -322,14 +357,23 @@ function ProfileExperienceContainer() {
           </Modal.Body>
           <Modal.Footer>
             {editMode ? (
-              <Button
-                variant="primary"
-                type="button"
-                className="martin-profile-main-btn mb-2 mb-lg-0"
-                onClick={()=>handleEdit()}
-              >
-                Edit Job
-              </Button>
+              <>
+                <Button
+                  variant="link"
+                  type="button"
+                  onClick={() => deleteJob()}
+                >
+                  <i class="bi bi-trash3"></i> Delete Job
+                </Button>
+                <Button
+                  variant="primary"
+                  type="button"
+                  className="martin-profile-main-btn mb-2 mb-lg-0"
+                  onClick={() => handleEdit()}
+                >
+                  Edit Job
+                </Button>
+              </>
             ) : (
               <Button
                 variant="primary"
