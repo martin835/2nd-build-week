@@ -4,18 +4,19 @@ import { useState, useEffect } from "react";
 function ProfileMainHero() {
 
   const [info, setInfo] = useState({})
+  const [user, setUser] = useState("")
 
   useEffect(()=>{
     loadInfo();
+ 
   },[])
 
   const loadInfo= async () => {
-    console.log("i am mounted");
-    
-
+    let user = "me";
+    //5fc4af46b708c200175de88f
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/5fc4baecb708c200175de89b",
+        "https://striveschool-api.herokuapp.com/api/profile/" + user,
         {
           method: "GET",
           headers: {
@@ -27,17 +28,17 @@ function ProfileMainHero() {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data)
-        setInfo(data)
-     
+        console.log(data);
+        setInfo(data);
       } else {
-        alert('something went wrong :(')
+        alert("something went wrong :(");
       }
     } catch (error) {
       console.log(error);
     }
   };
 
+  
 
   return (
     <>
