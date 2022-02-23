@@ -25,20 +25,20 @@ const ProfileList = () => {
       );
       if (response.ok) {
         let fetchedData = await response.json();
-        console.log("fetched Correctly", fetchedData);
+        // console.log("fetched Correctly", fetchedData);
 
         for (let i = 0; i < 5; i++) {
           let x = Math.floor(Math.random() * 200);
           arrayOfRandom.push(fetchedData[x]);
         }
-        console.log(arrayOfRandom);
+        // console.log(arrayOfRandom);
         setProfile(arrayOfRandom);
-        console.log("it worked", profile);
+        // console.log("it worked", profile);
       } else {
         alert("something went wrong :(");
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

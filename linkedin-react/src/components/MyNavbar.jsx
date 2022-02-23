@@ -64,7 +64,7 @@ const MyNavbar = ({ query, setQuery }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Link to={"/me"}>
+            <Link to={"/"}>
               <div className="d-flex flex-column align-items-center ml-3 py-2 position-relative">
                 <div className="ali-navbar-notification"></div>
                 <AiFillHome className="ali-navbar-icons " />
