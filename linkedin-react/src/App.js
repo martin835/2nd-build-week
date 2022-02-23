@@ -21,7 +21,10 @@ function App() {
           <Col xs={12} lg={9}>
             <Routes>
               <>
-                <Route path="/search" element={<Search query={query} />} />
+                <Route
+                  path="/search"
+                  element={<Search searchedQuery={query} />}
+                />
                 <Route
                   path="/:userId"
                   element={
