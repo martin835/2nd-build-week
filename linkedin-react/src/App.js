@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Search from "./components/Search";
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProfilePostCard from "./components/ProfilePostCard";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -40,6 +41,7 @@ function App() {
                 path="/"
                 element={
                   <div>
+                    <ProfilePostCard />
                     <SidebarEdit />
                     <ProfileList />
                   </div>
