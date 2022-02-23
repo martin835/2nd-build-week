@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
 import SearchCard from "./SearchCard";
 
-const Search = ({ query }) => {
-  const [arrayOfPeople, setArrayOfPeople] = useState([]);
+const Search = ({ searchedQuery }) => {
   const searchQuery = async () => {
+    console.log("this is the search" + searchedQuery);
     try {
       let resp = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/",
@@ -19,6 +19,7 @@ const Search = ({ query }) => {
       );
       if (resp.ok) {
         let body = await resp.json();
+        setIsLoading(false);
         setArrayOfPeople(body);
       } else {
         alert("something went wrong :(");
@@ -27,26 +28,36 @@ const Search = ({ query }) => {
       console.log(error);
     }
   };
-  useEffect(() => searchQuery, [query]);
-
+  const [arrayOfPeople, setArrayOfPeople] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => searchQuery(), []);
   return (
     <Container className="ali-search-container mt-3 py-3">
       <Row>
-        {arrayOfPeople
-          .filter((p) => p.name.toLowerCase().includes(query))
-          .map((person) => (
-            <SearchCard
-              name={person.name}
-              surname={person.surname}
-              image={person.image}
-              key={person._id}
-              title={person.title}
-              location={person.area}
-            />
-          ))}
+        {isLoading ? (
+          <div className=" w-100 d-flex justify-content-center align-items-center">
+            <Spinner animation="border" variant="primary" />
+          </div>
+        ) : (
+          arrayOfPeople
+            .filter((p) =>
+              p.name.toLowerCase().includes(searchedQuery.toLowerCase())
+            )
+            .map((person) => {
+              return (
+                <SearchCard
+                  name={person.name}
+                  surname={person.surname}
+                  image={person.image}
+                  keyID={person._id}
+                  title={person.title}
+                  location={person.area}
+                />
+              );
+            })
+        )}
 
-        {/* <SearchCard />
-        <SearchCard /> */}
+        {console.log("who is first")}
       </Row>
       <Row
         className="justify-content-center "

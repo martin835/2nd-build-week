@@ -4,6 +4,7 @@ import { BsPersonCircle } from "react-icons/bs";
 const SearchCard = ({ key, title, name, surname, location, image }) => {
   return (
     <Col xs={12}>
+      {/* {console.log("this is the key" + keyID)} */}
       <Row className="my-2">
         <Col xs={1}>
           <BsPersonCircle className="ali-search-user" />

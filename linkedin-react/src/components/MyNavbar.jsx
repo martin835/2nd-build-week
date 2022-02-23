@@ -12,6 +12,7 @@ import {
 import { AiFillHome } from "react-icons/ai";
 import { Container, Navbar, Nav, Form, FormControl } from "react-bootstrap";
 import { useState } from "react";
+import { Link } from "react-router-dom"
 
 const MyNavbar = ({ query, setQuery }) => {
   const handleKeyDown = (e) => {
@@ -65,7 +66,13 @@ const MyNavbar = ({ query, setQuery }) => {
               <div className="ali-navbar-notification"></div>
               <AiFillHome className="ali-navbar-icons " />
               <p className="my-0 ali-navbar-icon-description">Home</p>
-            </div>
+            <Link to={"/"}>
+              <div className="d-flex flex-column align-items-center ml-3 py-2 position-relative">
+                <div className="ali-navbar-notification"></div>
+                <AiFillHome className="ali-navbar-icons " />
+                <p className="my-0 ali-navbar-icon-description">Home</p>
+              </div>
+            </Link>
             <div className="d-flex flex-column align-items-center ml-3 py-2">
               <BsFillPeopleFill className="ali-navbar-icons" />
               <p className="my-0 ali-navbar-icon-description">My Network</p>
@@ -82,13 +89,15 @@ const MyNavbar = ({ query, setQuery }) => {
               <BsFillBellFill className="ali-navbar-icons" />
               <p className="my-0 ali-navbar-icon-description">Notifications</p>
             </div>
-            <div className="d-flex flex-column align-items-center ml-3 py-2">
-              <BsPersonCircle className="ali-navbar-icons" />
-              <p className="my-0 ali-navbar-icon-description">
-                Me
-                <BsCaretDownFill className="mb-1" />
-              </p>
-            </div>
+            <Link to={"/me"}>
+              <div className="d-flex flex-column align-items-center ml-3 py-2">
+                <BsPersonCircle className="ali-navbar-icons" />
+                <p className="my-0 ali-navbar-icon-description">
+                  Me
+                  <BsCaretDownFill className="mb-1" />
+                </p>
+              </div>
+            </Link>
             <div className="d-flex flex-column align-items-center ml-5 border-left pl-5 py-2">
               <BsGrid3X3GapFill className="ali-navbar-icons" />
               <p className="my-0 ali-navbar-icon-description">
