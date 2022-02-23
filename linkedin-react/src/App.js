@@ -17,49 +17,69 @@ function App() {
     <BrowserRouter>
       <MyNavbar query={query} setQuery={setQuery} />
       <Container>
-        <Row>
-          <Col xs={12} lg={9}>
-            <Routes>
-              <>
-                <Route
-                  path="/search"
-                  element={<Search searchedQuery={query} />}
-                />
-                <Route
-                  path="/:userId"
-                  element={
-                    <div>
-                      <ProfileMainHero />
-                      <ProfileExperienceContainer />
-                    </div>
-                  }
-                />
-                <Route
-                  path="/me"
-                  element={
-                    <div>
-                      <ProfileMainHero />
-                      <ProfileExperienceContainer />
-                    </div>
-                  }
-                />
-              </>
-            </Routes>
-          </Col>
-          <Col className="d-none d-lg-block" lg={3}>
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <div>
-                    <SidebarEdit />
-                    <ProfileList />
-                  </div>
-                }
-              />
-            </Routes>
-          </Col>
-        </Row>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Row>
+                <Col xs={12} lg={2}>
+                  {/* <<< Profile card >>>> */}
+                </Col>
+                <Col xs={12} lg={7}>
+                  {/* <<< POST SOMETHING >>>> */}
+                  {/* <<< POST CONTAINER >>>> */}
+                </Col>
+                <Col xs={12} lg={3}>
+                  <ProfileList />
+                </Col>
+              </Row>
+            }
+          />
+          <Route
+            path="/search"
+            element={
+              <Row>
+                <Col xs={12} lg={9}>
+                  <Search searchedQuery={query} />
+                </Col>
+                <Col xs={12} lg={3}>
+                  <Search searchedQuery={query} />
+                </Col>
+              </Row>
+            }
+          />
+
+          <Route
+            path="/me"
+            element={
+              <Row>
+                <Col xs={12} lg={9}>
+                  <ProfileMainHero />
+                  <ProfileExperienceContainer />
+                </Col>
+                <Col xs={12} lg={3}>
+                  <SidebarEdit />
+                  <ProfileList />
+                </Col>
+              </Row>
+            }
+          />
+          <Route
+            path="/:userId"
+            element={
+              <Row>
+                <Col xs={12} lg={9}>
+                  <ProfileMainHero />
+                  <ProfileExperienceContainer />
+                </Col>
+                <Col xs={12} lg={3}>
+                  <ProfileList />
+                  {/* <SidebarEdit /> */}
+                </Col>
+              </Row>
+            }
+          />
+        </Routes>
       </Container>
       <Footer />
     </BrowserRouter>
