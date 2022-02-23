@@ -30,12 +30,15 @@ const ProfileList = () => {
           let x = Math.floor(Math.random() * 200);
           arrayOfRandom.push(fetchedData[x]);
         }
+
         setProfile(arrayOfRandom);
+
+     
       } else {
         alert("something went wrong :(");
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
