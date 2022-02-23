@@ -8,6 +8,7 @@ import ProfileExperienceContainer from "./components/ProfileExperienceContainer"
 import ProfileList from "./components/ProfileList";
 import Footer from "./components/Footer";
 import Search from "./components/Search";
+import StartPost from "./components/StartPost";
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -19,6 +20,7 @@ function App() {
       <Container>
         <Row>
           <Col xs={12} lg={9}>
+            <StartPost/>
             <Routes>
               <>
                 <Route path="/search" element={<Search query={query} />} />
