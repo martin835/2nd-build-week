@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
-const ProfilePostCard = () => {
+const ProfilePostCard = ({ myPosts, setMyPosts }) => {
   const [myData, setMyData] = useState({});
 
   const params = useParams;
@@ -73,9 +73,13 @@ const ProfilePostCard = () => {
           </p>
           <p className="Gbemi-h6 ">Try Premium for free</p>
           <hr />
-          <Link className="text-dark" to={"/"}>
+          <div
+            className="text-dark"
+            onClick={() => setMyPosts(!myPosts)}
+            style={{ cursor: "pointer" }}
+          >
             <i class="bi bi-bookmark-fill"></i> Manage posts
-          </Link>
+          </div>
         </Col>
       </Row>
     </Container>
