@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 function ProfileExperienceContainer() {
   const params = useParams();
-  console.log(params.userId);
+  
 
   const [experiences, setExperiences] = useState(null);
   const [newExperience, setNewExperience] = useState({
@@ -28,14 +28,12 @@ function ProfileExperienceContainer() {
   const loadExperiences = async () => {
     let user = params.userId ? params.userId : "62134b69be40b50015b6c935";
     console.log("hooyyaaaaa" + params.userId);
-
+ 
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-
         user +
         "/experiences",
-
         {
           method: "GET",
           headers: {
@@ -102,12 +100,8 @@ function ProfileExperienceContainer() {
   };
 
   const editJob = async (id) => {
-    setLgShow(true);
-    console.log(id);
+    setLgShow(true);  
     setIdOfExperience(id);
-
-    console.log(newExperience);
-
     let user = params.userId;
     //5fc4af46b708c200175de88f
     try {
@@ -372,7 +366,7 @@ function ProfileExperienceContainer() {
                   type="button"
                   onClick={() => deleteJob()}
                 >
-                  <i class="bi bi-trash3"></i> Delete Job
+                  <i className="bi bi-trash3"></i> Delete Job
                 </Button>
                 <Button
                   variant="primary"

@@ -1,17 +1,19 @@
-
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col } from 'react-bootstrap'
-import MyNavbar from './components/MyNavbar'
-import SidebarEdit from './components/SidebarEdit'
-import ProfileMainHero from './components/ProfileMainHero'
-import ProfileExperienceContainer from './components/ProfileExperienceContainer'
-import ProfileList from './components/ProfileList'
-import Footer from './components/Footer'
-import Search from './components/Search'
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "react-bootstrap";
+import MyNavbar from "./components/MyNavbar";
+import SidebarEdit from "./components/SidebarEdit";
+import ProfileMainHero from "./components/ProfileMainHero";
+import ProfileExperienceContainer from "./components/ProfileExperienceContainer";
+import ProfileList from "./components/ProfileList";
+import Footer from "./components/Footer";
+import Search from "./components/Search";
+import StartPost from "./components/StartPost";
+import MyAllPosts from "./components/MyAllPosts";
 import PostContainer from './components/PostContainer'
-import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 function App() {
   const [query, setQuery] = useState("");

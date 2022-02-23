@@ -234,7 +234,7 @@
 }
 
 .martin-profile-icon-large {
-  font-size: 1.3rem;
+  font-size: 1.3rem !important;
 }
 
 .martin-profile-icon-large > i {
@@ -272,6 +272,28 @@
 .martin-width-45 {
   width: 45%;
 }
+
+.martin-border-radius-45 {
+  border-radius: 45px !important;
+}
+
+.martin-start-post-pic {
+  border-radius: 65px;
+  height: 80px;
+  width: 80x;
+}
+
+.martin-post-container{
+  position: relative;
+}
+
+.martin-post-edit-buttons-container{
+  position: absolute;
+  top: 50px;
+  right: -50px;
+  z-index: 1;
+}
+
 
 /* Martin's Styles END */
 
