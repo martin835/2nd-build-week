@@ -34,6 +34,15 @@ function App() {
                     </div>
                   }
                 />
+                <Route
+                  path="/me"
+                  element={
+                    <div>
+                      <ProfileMainHero />
+                      <ProfileExperienceContainer />
+                    </div>
+                  }
+                />
               </>
             </Routes>
           </Col>
