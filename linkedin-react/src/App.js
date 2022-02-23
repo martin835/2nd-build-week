@@ -13,6 +13,7 @@ import MyAllPosts from "./components/MyAllPosts";
 import PostContainer from './components/PostContainer'
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProfilePostCard from "./components/ProfilePostCard";
 
 
 function App() {
