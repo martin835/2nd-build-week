@@ -9,6 +9,7 @@ import ProfileList from "./components/ProfileList";
 import Footer from "./components/Footer";
 import Search from "./components/Search";
 import StartPost from "./components/StartPost";
+import MyAllPosts from "./components/MyAllPosts";
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
         <Row>
           <Col xs={12} lg={9}>
             <StartPost/>
+            <MyAllPosts/>
             <Routes>
               <>
                 <Route path="/search" element={<Search query={query} />} />
