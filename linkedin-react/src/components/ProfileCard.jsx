@@ -15,11 +15,11 @@ const ProfileCard = ({ profiles }) => {
         />
       </Col>
       <Col xs={9}>
-        <h6 className="mb-0 Gbemi-h6">
+        <h6 className="mb-0" style={{ fontSize: "0.9rem", fontWeight: "600" }}>
           {profiles.name} {profiles.surname}{" "}
         </h6>
         <p className="mb-1 Gbemi-profile-card-description">{profiles.title} </p>
-        <Button className="Gbemi-button1" variant="outline-secondary">
+        <Button className="Gbemi-button1 py-1" variant="outline-secondary">
           Connect
         </Button>
       </Col>

@@ -1,5 +1,5 @@
 import Post from "./Post";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const PostContainer = ({ posts, setPosts, fetchPost }) => {
   useEffect(() => {

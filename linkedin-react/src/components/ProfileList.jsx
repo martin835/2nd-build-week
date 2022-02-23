@@ -32,8 +32,6 @@ const ProfileList = () => {
         }
 
         setProfile(arrayOfRandom);
-
-     
       } else {
         alert("something went wrong :(");
       }
@@ -44,7 +42,7 @@ const ProfileList = () => {
 
   return (
     <div className="Gbemi-container border-bottom">
-      <h5 className="my-3 py-3">People you may know</h5>
+      <h5 className="my-4 py-3">People you may know</h5>
       {profile.map((data) => (
         <ProfileCard profiles={data} key={data._id} />
       ))}

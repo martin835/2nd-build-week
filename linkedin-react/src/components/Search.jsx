@@ -32,7 +32,7 @@ const Search = ({ searchedQuery }) => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => searchQuery(), []);
   return (
-    <Container className="ali-search-container my-3 py-3">
+    <Container className="ali-search-container my-4 py-3">
       <Row>
         {isLoading ? (
           <div className=" w-100 d-flex justify-content-center align-items-center">
