@@ -32,8 +32,10 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
+
         user +
         "/experiences",
+
         {
           method: "GET",
           headers: {
@@ -67,6 +69,7 @@ function ProfileExperienceContainer() {
         "https://striveschool-api.herokuapp.com/api/profile/" +
         user +
         "/experiences",
+
         {
           method: "POST",
           headers: {
@@ -105,14 +108,16 @@ function ProfileExperienceContainer() {
 
     console.log(newExperience);
 
-    let user = "62134b69be40b50015b6c935";
+    let user = params.userId;
     //5fc4af46b708c200175de88f
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
+
         user +
         "/experiences/" +
         id,
+
         {
           method: "GET",
           headers: {
@@ -148,9 +153,11 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
+
         user +
         "/experiences/" +
         idOfExperience,
+
         {
           method: "PUT",
           headers: {
@@ -181,9 +188,11 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
+
         user +
         "/experiences/" +
         idOfExperience,
+
         {
           method: "DELETE",
           headers: {
@@ -242,7 +251,7 @@ function ProfileExperienceContainer() {
         size="lg"
         show={lgShow}
         onHide={() => {
-          setEditMode(!editMode);
+          setEditMode(false);
           setLgShow(false);
           setNewExperience({
             role: "",

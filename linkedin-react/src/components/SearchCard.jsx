@@ -1,7 +1,10 @@
 import { Row, Col } from "react-bootstrap";
 import { BsPersonCircle } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
-const SearchCard = ({ key, title, name, surname, location, image }) => {
+const SearchCard = ({ keyID, title, name, surname, location, image }) => {
+  const navigate = useNavigate();
+  let idKey = "/" + keyID;
   return (
     <Col xs={12}>
       {/* {console.log("this is the key" + keyID)} */}
@@ -11,7 +14,7 @@ const SearchCard = ({ key, title, name, surname, location, image }) => {
         </Col>
         <Col xs={9} className="border-bottom pl-0">
           <div>
-            <p className="ali-search-name my-0">
+            <p className="ali-search-name my-0" onClick={() => navigate(idKey)}>
               {name}
               {" " + surname}
             </p>

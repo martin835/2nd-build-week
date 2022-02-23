@@ -1,6 +1,8 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
+
 import { useParams } from "react-router-dom"
+
 
 function ProfileMainHero() {
   const params = useParams();
@@ -40,8 +42,6 @@ function ProfileMainHero() {
     }
   };
 
-
-
   return (
     <>
       <div className="martin-profile-main-br bg-white mt-3">
@@ -51,7 +51,7 @@ function ProfileMainHero() {
             backgroundImage: "url(" + require("../assets/hero-pic.jpeg") + ")",
           }}
         >
-          <img src={info.image} />
+          <img src={info.image} alt="" />
         </div>
         <Row className="mt-5 p-3">
           <Col xs={7}>
@@ -61,7 +61,7 @@ function ProfileMainHero() {
             <p className="martin-profile-hero-desc">{info.bio}</p>
             <p>
               <span className="text-secondary">
-                {info.area} <i class="bi bi-dot"></i>{" "}
+                {info.area} <i className="bi bi-dot"></i>{" "}
               </span>
               <strong className="martin-color-link-profile">
                 Contact info
@@ -92,6 +92,7 @@ function ProfileMainHero() {
               <img
                 className="martin-profile-hero-thumbnail-image mr-2"
                 src={require("../assets/placeholder.jpeg")}
+                alt=""
               />
               <span>
                 <strong>Employment at Random Company</strong>
@@ -101,6 +102,7 @@ function ProfileMainHero() {
               <img
                 className="martin-profile-hero-thumbnail-image mr-2"
                 src={require("../assets/strive-logo.jpeg")}
+                alt=""
               />
               <span>
                 <strong>Strive School</strong>
@@ -114,4 +116,3 @@ function ProfileMainHero() {
 }
 
 export default ProfileMainHero;
-

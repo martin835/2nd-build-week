@@ -10,18 +10,22 @@ import {
   BsSearch,
 } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
-import { Container, Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import { useState } from "react";
-import { Link } from "react-router-dom"
+
+import { Link, useNavigate } from "react-router-dom";
+
 
 const MyNavbar = ({ query, setQuery }) => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       setQuery(query2);
+      navigate("/search");
     }
   };
 
   const [query2, setQuery2] = useState(query);
+  const navigate = useNavigate();
 
   return (
     <Navbar bg="light" expand="lg" className="py-0">

@@ -1,3 +1,4 @@
+
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -13,7 +14,7 @@ import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState("");
   return (
     <BrowserRouter>
       <MyNavbar query={query} setQuery={setQuery} />
@@ -84,7 +85,7 @@ function App() {
       </Container>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
