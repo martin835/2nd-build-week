@@ -1,44 +1,41 @@
 import { Row, Col, Button, Modal, Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-const StartPost = () => {
+const StartPost = (props) => {
+  const [newPost, setNewPost] = useState({ text: "" });
+  const [show, setShow] = useState(false);
 
-const [newPost, setNewPost] = useState({text: ""})
-const [show, setShow] = useState(false);
-
-const handleClose = () => setShow(false);
-const handleShow = () => setShow(true);
-const handlePost = async () => {
-     try {
-       let response = await fetch(
-         "https://striveschool-api.herokuapp.com/api/posts",
-         {
-           method: "POST",
-           headers: {
-             "Content-Type": "application/json",
-             Authorization:
-               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjEzNGI2OWJlNDBiNTAwMTViNmM5MzUiLCJpYXQiOjE2NDU0MzE2NTcsImV4cCI6MTY0NjY0MTI1N30.sW4qGqsabPColujp6kpA3P6pfCQ-VN9D8e5WEW1RdTI",
-           },
-           body: JSON.stringify(newPost),
-         }
-       );
-       if (response.ok) {
-         let data = await response.json();
-         console.log(data);
-         
-         setShow(false);
-         setNewPost({
-           text: "",
-        })
-       } else {
-         alert("something went wrong :(");
-       }
-     } catch (error) {
-       console.log(error);
-     }
-}
-
-
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handlePost = async () => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjEzNGI2OWJlNDBiNTAwMTViNmM5MzUiLCJpYXQiOjE2NDU0MzE2NTcsImV4cCI6MTY0NjY0MTI1N30.sW4qGqsabPColujp6kpA3P6pfCQ-VN9D8e5WEW1RdTI",
+          },
+          body: JSON.stringify(newPost),
+        }
+      );
+      if (response.ok) {
+        let data = await response.json();
+        console.log(data);
+        props.fetchPost();
+        setShow(false);
+        setNewPost({
+          text: "",
+        });
+      } else {
+        alert("something went wrong :(");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="bg-white martin-profile-experience-container mt-4">
@@ -84,10 +81,14 @@ const handlePost = async () => {
           <Modal.Title>Create a post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Write your post here</Form.Label>
-            <Form.Control as="textarea" rows={3} value={newPost.text} onChange={(e)=>setNewPost({text: e.target.value})} />
+            <Form.Control
+              as="textarea"
+              rows={3}
+              value={newPost.text}
+              onChange={(e) => setNewPost({ text: e.target.value })}
+            />
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
@@ -96,7 +97,10 @@ const handlePost = async () => {
           </Button>
           <Button
             variant="primary"
-            onClick={()=>{handleClose(); handlePost()}}
+            onClick={() => {
+              handleClose();
+              handlePost();
+            }}
             className="martin-profile-main-btn"
           >
             Post
