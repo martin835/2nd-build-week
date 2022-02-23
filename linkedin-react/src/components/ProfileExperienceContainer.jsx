@@ -32,8 +32,10 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-          user +
-          "/experiences",
+
+        user +
+        "/experiences",
+
         {
           method: "GET",
           headers: {
@@ -65,8 +67,9 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-          user +
-          "/experiences",
+        user +
+        "/experiences",
+
         {
           method: "POST",
           headers: {
@@ -110,9 +113,11 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-          user +
-          "/experiences/" +
-          id,
+
+        user +
+        "/experiences/" +
+        id,
+
         {
           method: "GET",
           headers: {
@@ -148,9 +153,11 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-          user +
-          "/experiences/" +
-          idOfExperience,
+
+        user +
+        "/experiences/" +
+        idOfExperience,
+
         {
           method: "PUT",
           headers: {
@@ -181,9 +188,11 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-          user +
-          "/experiences/" +
-          idOfExperience,
+
+        user +
+        "/experiences/" +
+        idOfExperience,
+
         {
           method: "DELETE",
           headers: {

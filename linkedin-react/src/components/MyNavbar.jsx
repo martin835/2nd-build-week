@@ -12,7 +12,9 @@ import {
 import { AiFillHome } from "react-icons/ai";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
+
 
 const MyNavbar = ({ query, setQuery }) => {
   const handleKeyDown = (e) => {

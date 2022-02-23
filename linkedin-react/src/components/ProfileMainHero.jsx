@@ -1,6 +1,8 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+
+import { useParams } from "react-router-dom"
+
 
 function ProfileMainHero() {
   const params = useParams();
