@@ -283,6 +283,16 @@
   width: 80x;
 }
 
+.martin-post-container{
+  position: relative;
+}
+
+.martin-post-edit-buttons-container{
+  position: absolute;
+  top: 50px;
+  right: -50px;
+  z-index: 1;
+}
 
 
 /* Martin's Styles END */

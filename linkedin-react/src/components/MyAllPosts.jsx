@@ -1,17 +1,19 @@
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Spinner } from "react-bootstrap";
 import MyOnePost from "./MyOnePost";
 import {useState, useEffect} from "react"
+
 
 
 function MyAllPosts() {
 
 const [allPosts, setAllPosts] = useState([])
-
+const [loading, setLoading] = useState(false);
 useEffect(()=>{loadMyPosts()},[])
 
 const loadMyPosts = async () => {
          
      try {
+      setLoading(true);
        let response = await fetch(
          "https://striveschool-api.herokuapp.com/api/posts/",
          {
@@ -27,6 +29,7 @@ const loadMyPosts = async () => {
          let data = await response.json();
          console.log(data);
          setAllPosts(data);
+         setLoading(false);
        } else {
          alert("something went wrong :(");
        }
@@ -38,7 +41,20 @@ const loadMyPosts = async () => {
 
   return (
     <div className="p-3 bg-white mt-3 mb-5 martin-profile-experience-container">
-      {allPosts.filter((post) => post.username === "Martin1234").map((post) => <MyOnePost text={post.text}/>)}
+      {loading ? (
+        <Spinner animation="border" variant="primary" />
+      ) : (
+        allPosts
+          .filter((post) => post.username === "Martin1234")
+          .map((post) => (
+            <MyOnePost
+              loadMyPosts={loadMyPosts}
+              text={post.text}
+              postId={post._id}
+              key={post._id}
+            />
+          ))
+      )}
     </div>
   );
 }

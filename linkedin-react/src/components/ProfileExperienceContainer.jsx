@@ -375,7 +375,7 @@ function ProfileExperienceContainer() {
                   type="button"
                   onClick={() => deleteJob()}
                 >
-                  <i class="bi bi-trash3"></i> Delete Job
+                  <i className="bi bi-trash3"></i> Delete Job
                 </Button>
                 <Button
                   variant="primary"

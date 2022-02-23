@@ -62,19 +62,19 @@ const handlePost = async () => {
       </Row>
       <Row className="px-3 pb-3 martin-profile-icon-large  ">
         <Col xs={3}>
-          <i class="bi bi-image"></i>
+          <i className="bi bi-image"></i>
           <span className="ml-2">Photo</span>
         </Col>
         <Col xs={3}>
-          <i class="bi bi-camera-video"></i>
+          <i className="bi bi-camera-video"></i>
           <span className="ml-2">Video</span>
         </Col>
         <Col xs={3}>
-          <i class="bi bi-calendar-date"></i>
+          <i className="bi bi-calendar-date"></i>
           <span className="ml-2">Event</span>
         </Col>
         <Col xs={3}>
-          <i class="bi bi-text-paragraph"></i>
+          <i className="bi bi-text-paragraph"></i>
           <span className="ml-2">Article</span>
         </Col>
       </Row>
