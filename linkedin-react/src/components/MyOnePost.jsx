@@ -75,7 +75,30 @@ const handleEdit = async () => {
       console.log(error);
     }
 }
-const handleDelete = async () => {}
+const handleDelete = async () => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/" + props.postId,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjEzNGI2OWJlNDBiNTAwMTViNmM5MzUiLCJpYXQiOjE2NDU0MzE2NTcsImV4cCI6MTY0NjY0MTI1N30.sW4qGqsabPColujp6kpA3P6pfCQ-VN9D8e5WEW1RdTI",
+          },
+        }
+      );
+      if (response.ok) {
+        props.loadMyPosts();
+        handleClose();
+        setEditMode(false);
+      } else {
+        alert("something went wrong :(");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+}
 
   return (
     <>
