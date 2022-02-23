@@ -43,7 +43,7 @@ const ProfilePostCard = ({ myPosts, setMyPosts }) => {
     <Container className="Gbemi-container mt-4 py-0">
       <Row>
         <Col>
-          <center className="Gbemi-division mt-2">
+          <center className="Gbemi-division d mt-2">
             <img
               className="Gbemi-image2"
               src={
@@ -63,20 +63,20 @@ const ProfilePostCard = ({ myPosts, setMyPosts }) => {
           <center className="text-muted mb-3 Gbemi-font">{myData.title}</center>
           <hr />
           <p className="d-flex mb-0">
-            <span className="d-inline-block text-muted">Connection</span>
-            <span className="d-inline-block ml-auto">1</span>
+            <span className="d-inline-block gbemi-span">Connection</span>
+            <span className="d-inline-block gbemi-span ml-auto">1</span>
           </p>
-          <h6 className="Gbemi-h6">Grow your network</h6>
+          <h6 className="Gbemi-h6-2">Grow your network</h6>
           <hr />
           <p className="text-muted mb-0 Gbemi-font">
             Access exclusive tools & insights
           </p>
-          <p className="Gbemi-h6 ">Try Premium for free</p>
-          <hr />
+          <p className="Gbemi-h6-2 my-0 mb-2 ">Try Premium for free</p>
+
           <div
-            className="text-dark"
+            className="text-dark border-top py-2"
             onClick={() => setMyPosts(!myPosts)}
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", fontSize: "0.9rem", fontWeight: "600" }}
           >
             <i class="bi bi-bookmark-fill"></i> Manage posts
           </div>

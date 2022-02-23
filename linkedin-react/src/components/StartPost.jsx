@@ -58,21 +58,41 @@ const StartPost = (props) => {
         </Col>
       </Row>
       <Row className="px-3 pb-3 martin-profile-icon-large  ">
-        <Col xs={3}>
+        <Col
+          xs={3}
+          className=" d-flex justify-content-center align-items-center "
+        >
           <i className="bi bi-image"></i>
-          <span className="ml-2">Photo</span>
+          <span className="ml-1" style={{ fontSize: "1rem" }}>
+            Photo
+          </span>
         </Col>
-        <Col xs={3}>
+        <Col
+          xs={3}
+          className=" d-flex justify-content-center align-items-center "
+        >
           <i className="bi bi-camera-video"></i>
-          <span className="ml-2">Video</span>
+          <span className="ml-1" style={{ fontSize: "1rem" }}>
+            Video
+          </span>
         </Col>
-        <Col xs={3}>
+        <Col
+          xs={3}
+          className=" d-flex justify-content-center align-items-center "
+        >
           <i className="bi bi-calendar-date"></i>
-          <span className="ml-2">Event</span>
+          <span className="ml-1" style={{ fontSize: "1rem" }}>
+            Event
+          </span>
         </Col>
-        <Col xs={3}>
+        <Col
+          xs={3}
+          className=" d-flex justify-content-center align-items-center "
+        >
           <i className="bi bi-text-paragraph"></i>
-          <span className="ml-2">Article</span>
+          <span className="ml-1" style={{ fontSize: "1rem" }}>
+            Article
+          </span>
         </Col>
       </Row>
 

@@ -52,10 +52,10 @@ function App() {
             path="/"
             element={
               <Row>
-                <Col xs={12} lg={2}>
+                <Col xs={12} lg={3} className="px-1">
                   <ProfilePostCard myPosts={myPosts} setMyPosts={setMyPosts} />
                 </Col>
-                <Col xs={12} lg={7}>
+                <Col xs={12} lg={6} className="px-1">
                   <StartPost
                     posts={posts}
                     setPosts={setPosts}
@@ -65,13 +65,14 @@ function App() {
                     <MyAllPosts />
                   ) : (
                     <PostContainer
+                      className="mt-1"
                       posts={posts}
                       setPosts={setPosts}
                       fetchPost={fetchPost}
                     />
                   )}
                 </Col>
-                <Col xs={12} lg={3}>
+                <Col xs={12} lg={3} className="px-1">
                   <ProfileList />
                 </Col>
               </Row>
@@ -81,11 +82,11 @@ function App() {
             path="/search"
             element={
               <Row>
-                <Col xs={12} lg={9}>
+                <Col xs={12} lg={9} className="px-1">
                   <Search searchedQuery={query} />
                 </Col>
-                <Col xs={12} lg={3}>
-                  <Search searchedQuery={query} />
+                <Col xs={12} lg={3} className="px-1">
+                  <ProfileList />
                 </Col>
               </Row>
             }
@@ -95,11 +96,11 @@ function App() {
             path="/me"
             element={
               <Row>
-                <Col xs={12} lg={9}>
+                <Col xs={12} lg={9} className="px-1">
                   <ProfileMainHero />
                   <ProfileExperienceContainer />
                 </Col>
-                <Col xs={12} lg={3}>
+                <Col xs={12} lg={3} className="px-1">
                   <SidebarEdit />
                   <ProfileList />
                 </Col>
@@ -110,11 +111,11 @@ function App() {
             path="/:userId"
             element={
               <Row>
-                <Col xs={12} lg={9}>
+                <Col xs={12} lg={9} className="px-1">
                   <ProfileMainHero />
                   <ProfileExperienceContainer />
                 </Col>
-                <Col xs={12} lg={3}>
+                <Col xs={12} lg={3} className="px-1">
                   <ProfileList />
                   {/* <SidebarEdit /> */}
                 </Col>

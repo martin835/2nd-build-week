@@ -11,18 +11,18 @@ const Post = ({ data }) => {
   const days = Math.floor(Math.random() * 15);
 
   return (
-    <Container className={"mirko-posts-container px-3"}>
+    <Container className={"mirko-posts-container my-2  px-3"}>
       <Row>
         <Col className={"mirko-post mt-3"}>
           <div className={"mirko-post-header"}>
             <div className={"d-flex justify-content-between"}>
               <div className={"d-flex flex-row mb-3"}>
                 <img
-                  className={"mt-2"}
                   src={data.user?.image}
                   alt="user profile"
-                  width="40"
-                  height="40"
+                  width="50"
+                  height="50"
+                  style={{ borderRadius: "30px" }}
                 ></img>
                 <Col className={"d-flex flex-column"}>
                   <h6 className={"mirko-post-text fw-bold my-0"}>
