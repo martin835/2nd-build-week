@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom"
 function ProfileExperienceContainer() {
 
   const params = useParams();
-  console.log(params.userId);
+  
 
   const [experiences, setExperiences] = useState(null);
   const [newExperience, setNewExperience] = useState({    
@@ -48,7 +48,7 @@ function ProfileExperienceContainer() {
        );
        if (response.ok) {
          let data = await response.json();
-         console.log(data);
+        
          setExperiences(data);
        } else {
          alert("something went wrong :(");
@@ -60,7 +60,7 @@ function ProfileExperienceContainer() {
 
    const submitNewJob = async (e) => {
       e.preventDefault();
-      console.log(newExperience);
+    
    
 
            let user = params.userId;
@@ -107,11 +107,11 @@ function ProfileExperienceContainer() {
    
    const editJob = async (id) => {
     setLgShow(true);
-    console.log(id);
+  
     setIdOfExperience(id);
     
     
-    console.log(newExperience);
+
 
     let user = params.userId;
     //5fc4af46b708c200175de88f

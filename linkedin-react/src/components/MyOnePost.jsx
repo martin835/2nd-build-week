@@ -35,7 +35,7 @@ const loadPostText = async () => {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data);
+        
         setLoading(false);
         setPost({ text: data.text });
       } else {
@@ -63,7 +63,7 @@ const handleEdit = async () => {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data);
+       
         handleClose();
         setEditMode(false);
         setLoading(false);
@@ -112,7 +112,7 @@ const handleDelete = async () => {
                 setEditMode(!editMode);
               }}
             >
-              <i class="bi bi-three-dots"></i>
+              <i className="bi bi-three-dots"></i>
             </span>
           </div>
           {editMode && (

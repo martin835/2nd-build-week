@@ -21,8 +21,6 @@ function App() {
       <Container>
         <Row>
           <Col xs={12} lg={9}>
-            <StartPost/>
-            <MyAllPosts/>
             <Routes>
               <>
                 <Route path="/search" element={<Search query={query} />} />
