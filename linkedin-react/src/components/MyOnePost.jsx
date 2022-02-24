@@ -119,6 +119,7 @@ function MyOnePost(props) {
           body: formData,
         }
       );
+      console.log("what the hell");
       if (response.ok) {
         let data = await response.json();
         console.log(data);
@@ -130,6 +131,18 @@ function MyOnePost(props) {
       console.log(error);
     }
   };
+  const ThreeDot = () => {
+    return (
+      <span
+        className="float-right martin-profile-icon-large"
+        onClick={() => {
+          setEditMode(!editMode);
+        }}
+      >
+        <i className="bi bi-three-dots"></i>
+      </span>
+    );
+  };
 
   return (
     <>
@@ -139,16 +152,13 @@ function MyOnePost(props) {
             {loading ? (
               <Spinner animation="border" variant="primary" />
             ) : (
-              <Post data={props.post} key={props.post._id} />
+              <Post
+                ThreeDot={ThreeDot}
+                editable
+                data={props.post}
+                key={props.post._id}
+              />
             )}
-            <span
-              className="float-right martin-profile-icon-large"
-              onClick={() => {
-                setEditMode(!editMode);
-              }}
-            >
-              <i className="bi bi-three-dots"></i>
-            </span>
           </div>
           {editMode && (
             <div className="martin-post-edit-buttons-container">
@@ -156,7 +166,7 @@ function MyOnePost(props) {
                 <ListGroup.Item>
                   <Button
                     variant="link"
-                    onClick={() => {
+                    onClick={(e) => {
                       loadPostText();
                       handleShow();
                     }}
@@ -199,9 +209,10 @@ function MyOnePost(props) {
           </Button>
           <Button
             variant="primary"
-            onClick={() => {
+            onClick={(e) => {
               handleClose();
               handleEdit();
+              uploadPostPicture(e);
             }}
             className="martin-profile-main-btn"
           >

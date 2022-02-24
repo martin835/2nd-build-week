@@ -4,7 +4,7 @@ import { BiWorld, BiMessageRoundedDetail } from "react-icons/bi";
 import { BsArrow90DegRight } from "react-icons/bs";
 import { FiSend } from "react-icons/fi";
 
-const Post = ({ data }) => {
+const Post = ({ data, ThreeDot, editable }) => {
   console.log(data);
 
   const followers = Math.floor(Math.random() * 10000);
@@ -38,14 +38,20 @@ const Post = ({ data }) => {
                   </h6>
                 </Col>
               </div>
-              <BsThreeDots className={"three-dots"} />
+              {/* <BsThreeDots className={"three-dots"} /> */}
+              {editable && <ThreeDot />}
             </div>
           </div>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h6>{data.text}</h6>
+          <div>
+            <div className="w-100 h-100">
+              <img src={data.image} alt="" />
+            </div>
+            <h6>{data.text}</h6>
+          </div>
         </Col>
       </Row>
       <Row className={"px-2"}>
