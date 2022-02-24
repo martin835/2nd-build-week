@@ -15,7 +15,6 @@ import { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
-
 const MyNavbar = ({ query, setQuery }) => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -28,7 +27,7 @@ const MyNavbar = ({ query, setQuery }) => {
   const navigate = useNavigate();
 
   return (
-    <Navbar bg="light" expand="lg" className="py-0">
+    <Navbar bg="light" expand="lg" className="py-0 my-navbar">
       <Container>
         <BsLinkedin className="ali-linkedIn-logo mr-2" />
         <div

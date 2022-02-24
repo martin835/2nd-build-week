@@ -55,7 +55,7 @@ const ProfilePostCard = ({ myPosts, setMyPosts }) => {
             />
           </center>
 
-          <Link to={"/"}>
+          <Link to={"/me"}>
             <center className="text-dark Gbemi-h6">
               {myData.name} {""} {myData.surname}
             </center>

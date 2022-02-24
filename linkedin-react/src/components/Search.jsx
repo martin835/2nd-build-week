@@ -20,6 +20,7 @@ const Search = ({ searchedQuery }) => {
       if (resp.ok) {
         let body = await resp.json();
         setIsLoading(false);
+
         setArrayOfPeople(body);
       } else {
         alert("something went wrong :(");

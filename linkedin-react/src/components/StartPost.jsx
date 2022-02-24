@@ -62,37 +62,45 @@ const StartPost = (props) => {
           xs={3}
           className=" d-flex justify-content-center align-items-center "
         >
-          <i className="bi bi-image"></i>
-          <span className="ml-1" style={{ fontSize: "1rem" }}>
-            Photo
-          </span>
+          <Button className="martin-profile-post-button">
+            <i className="bi bi-image"></i>
+            <span className="ml-1" style={{ fontSize: "1rem" }}>
+              Photo
+            </span>
+          </Button>
         </Col>
         <Col
           xs={3}
           className=" d-flex justify-content-center align-items-center "
         >
-          <i className="bi bi-camera-video"></i>
-          <span className="ml-1" style={{ fontSize: "1rem" }}>
-            Video
-          </span>
+          <Button className="martin-profile-post-button">
+            <i className="bi bi-camera-video"></i>
+            <span className="ml-1" style={{ fontSize: "1rem" }}>
+              Video
+            </span>
+          </Button>
         </Col>
         <Col
           xs={3}
           className=" d-flex justify-content-center align-items-center "
         >
-          <i className="bi bi-calendar-date"></i>
-          <span className="ml-1" style={{ fontSize: "1rem" }}>
-            Event
-          </span>
+          <Button className="martin-profile-post-button">
+            <i className="bi bi-calendar-date"></i>
+            <span className="ml-1" style={{ fontSize: "1rem" }}>
+              Event
+            </span>
+          </Button>
         </Col>
         <Col
           xs={3}
           className=" d-flex justify-content-center align-items-center "
         >
-          <i className="bi bi-text-paragraph"></i>
-          <span className="ml-1" style={{ fontSize: "1rem" }}>
-            Article
-          </span>
+          <Button className="martin-profile-post-button">
+            <i className="bi bi-text-paragraph"></i>
+            <span className="ml-1" style={{ fontSize: "1rem" }}>
+              Article
+            </span>
+          </Button>
         </Col>
       </Row>
 

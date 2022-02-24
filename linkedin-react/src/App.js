@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
 import MyNavbar from "./components/MyNavbar";
 import SidebarEdit from "./components/SidebarEdit";
 import ProfileMainHero from "./components/ProfileMainHero";
@@ -11,7 +11,7 @@ import Search from "./components/Search";
 import StartPost from "./components/StartPost";
 import MyAllPosts from "./components/MyAllPosts";
 import PostContainer from "./components/PostContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProfilePostCard from "./components/ProfilePostCard";
 
@@ -19,6 +19,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [myPosts, setMyPosts] = useState(false);
   const [posts, setPosts] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchPost = async () => {
     const url = "https://striveschool-api.herokuapp.com/api/posts/";
@@ -35,6 +36,7 @@ function App() {
         let data = await response.json();
         //console.log(data);
         setPosts(data.reverse());
+        setIsLoading(false);
       } else {
         alert("something went wrong :(");
       }
@@ -42,6 +44,7 @@ function App() {
       console.log(error);
     }
   };
+  useEffect(() => fetchPost(), []);
 
   return (
     <BrowserRouter>
@@ -63,6 +66,10 @@ function App() {
                   />
                   {myPosts ? (
                     <MyAllPosts />
+                  ) : isLoading ? (
+                    <div className=" w-100 d-flex justify-content-center align-items-center mt-2">
+                      <Spinner animation="border" variant="primary" />
+                    </div>
                   ) : (
                     <PostContainer
                       className="mt-1"
@@ -83,7 +90,7 @@ function App() {
             element={
               <Row>
                 <Col xs={12} lg={9} className="px-1">
-                  <Search searchedQuery={query} />
+                  <Search searchedQuery={query} setQuery={setQuery} />
                 </Col>
                 <Col xs={12} lg={3} className="px-1">
                   <ProfileList />
