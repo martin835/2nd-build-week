@@ -1,5 +1,5 @@
-import { Row, Col, Button } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { Row, Col, Button, Modal, Form } from "react-bootstrap";
+import { useState, useEffect, useRef } from "react";
 
 import { useParams } from "react-router-dom"
 
@@ -9,6 +9,11 @@ function ProfileMainHero() {
 
   const [info, setInfo] = useState({});
   const [user, setUser] = useState("");
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+   const inputFile = useRef(null);
 
   useEffect(() => {
     loadInfo();
@@ -42,6 +47,39 @@ function ProfileMainHero() {
     }
   };
 
+  const uploadProfilePicture = async  (e) => {
+    e.preventDefault();
+    const inpFile = document.getElementById("formUploadProfilePic");
+    const formData = new FormData();
+    formData.append("profile", inpFile.files[0]);
+    console.log(inpFile.files[0]);
+
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/62134b69be40b50015b6c935/picture",
+        {
+          method: "POST",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjEzNGI2OWJlNDBiNTAwMTViNmM5MzUiLCJpYXQiOjE2NDU0MzE2NTcsImV4cCI6MTY0NjY0MTI1N30.sW4qGqsabPColujp6kpA3P6pfCQ-VN9D8e5WEW1RdTI",
+          },
+          body: formData,
+        }
+      );
+      if (response.ok) {
+        let data = await response.json();
+        console.log(data);
+        loadInfo();
+      } else {
+        alert("something went wrong :(");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+
+
   return (
     <>
       <div className="martin-profile-main-br bg-white mt-3">
@@ -51,7 +89,7 @@ function ProfileMainHero() {
             backgroundImage: "url(" + require("../assets/hero-pic.jpeg") + ")",
           }}
         >
-          <img src={info.image} alt="" />
+          <img src={info.image} alt="" onClick={handleShow} />
         </div>
         <Row className="mt-5 p-3">
           <Col xs={7}>
@@ -110,6 +148,33 @@ function ProfileMainHero() {
             </div>
           </Col>
         </Row>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Upload a profile picture</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+              <Form.Group className="mb-3" controlId="formUploadProfilePic">
+                <Form.Label>Select a picture</Form.Label>
+                <Form.Control type="file" ref={inputFile} />
+              </Form.Group>
+            </Form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button
+              variant="primary"
+              onClick={(e) => {
+                handleClose();
+                uploadProfilePicture(e);
+              }}
+            >
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     </>
   );
