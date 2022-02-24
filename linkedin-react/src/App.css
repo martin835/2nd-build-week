@@ -6,6 +6,11 @@
 .App {
   background-color: #0b66c2;
 }
+.my-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 .ali-linkedIn-logo {
   width: 2rem;
   height: 2rem;
@@ -278,10 +283,23 @@
   /* padding: 10px; */
 }
 
-.martin-profile-icon-large:hover {
+/* .martin-profile-icon-large:hover {
   cursor: pointer;
   background-color: lightgray;
   border-radius: 40px;
+} */
+
+.martin-profile-post-button {
+  background-color: transparent !important;
+  border: none !important;
+  display: flex;
+  color: black !important;
+}
+.martin-profile-post-button:hover {
+  background-color: rgba(146, 141, 141, 0.468) !important;
+  border: none !important;
+  display: flex;
+  color: black !important;
 }
 
 .martin-profile-experience-thumbnail-image {

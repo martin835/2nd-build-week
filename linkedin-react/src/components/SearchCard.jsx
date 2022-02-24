@@ -8,7 +8,7 @@ const SearchCard = ({ keyID, title, name, surname, location, image }) => {
   return (
     <Col xs={12}>
       {/* {console.log("this is the key" + keyID)} */}
-      <Row className="my-2">
+      <Row className="my-2" style={{ cursor: "pointer" }}>
         <Col xs={1}>
           <BsPersonCircle className="ali-search-user" />
         </Col>
