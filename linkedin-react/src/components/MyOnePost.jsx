@@ -8,20 +8,19 @@ import {
   Spinner,
 } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import Post from "./Post";
 
 function MyOnePost(props) {
+  const [editMode, setEditMode] = useState(false);
+  const [post, setPost] = useState({ text: "" });
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [loading, setLoading] = useState(false);
 
-const [editMode, setEditMode] = useState(false)
-const [post, setPost] = useState({ text: "" });
-const [show, setShow] = useState(false);
-const handleClose = () => setShow(false);
-const handleShow = () => setShow(true);
-const [loading, setLoading] = useState(false);
-
-
-const loadPostText = async () => {
+  const loadPostText = async () => {
     try {
-    setLoading(true);
+      setLoading(true);
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/posts/" + props.postId,
         {
@@ -35,7 +34,7 @@ const loadPostText = async () => {
       );
       if (response.ok) {
         let data = await response.json();
-        
+
         setLoading(false);
         setPost({ text: data.text });
       } else {
@@ -44,11 +43,11 @@ const loadPostText = async () => {
     } catch (error) {
       console.log(error);
     }
-}
+  };
 
-const handleEdit = async () => {
+  const handleEdit = async () => {
     try {
-    setLoading(true);
+      setLoading(true);
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/posts/" + props.postId,
         {
@@ -63,7 +62,7 @@ const handleEdit = async () => {
       );
       if (response.ok) {
         let data = await response.json();
-       
+
         handleClose();
         setEditMode(false);
         setLoading(false);
@@ -74,8 +73,8 @@ const handleEdit = async () => {
     } catch (error) {
       console.log(error);
     }
-}
-const handleDelete = async () => {
+  };
+  const handleDelete = async () => {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/posts/" + props.postId,
@@ -98,14 +97,50 @@ const handleDelete = async () => {
     } catch (error) {
       console.log(error);
     }
-}
+  };
+
+  const uploadPostPicture = async (e) => {
+    e.preventDefault();
+    console.log(props.postId);
+    const inpFile = document.getElementById("formUploadPostPic");
+    const formData = new FormData();
+    formData.append("post", inpFile.files[0]);
+    console.log(inpFile.files[0]);
+
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/posts/` + props.postId,
+        {
+          method: "POST",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjEzNGI2OWJlNDBiNTAwMTViNmM5MzUiLCJpYXQiOjE2NDU0MzE2NTcsImV4cCI6MTY0NjY0MTI1N30.sW4qGqsabPColujp6kpA3P6pfCQ-VN9D8e5WEW1RdTI",
+          },
+          body: formData,
+        }
+      );
+      if (response.ok) {
+        let data = await response.json();
+        console.log(data);
+        props.loadMyPosts();
+      } else {
+        alert("something went wrong :(");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
       <Row>
         <Col>
           <div className="martin-post-container">
-            {loading ? (<Spinner animation="border" variant="primary" />) : props.text}
+            {loading ? (
+              <Spinner animation="border" variant="primary" />
+            ) : (
+              <Post data={props.post} key={props.post._id} />
+            )}
             <span
               className="float-right martin-profile-icon-large"
               onClick={() => {
@@ -119,7 +154,13 @@ const handleDelete = async () => {
             <div className="martin-post-edit-buttons-container">
               <ListGroup>
                 <ListGroup.Item>
-                  <Button variant="link" onClick={() => {loadPostText();handleShow()}}>
+                  <Button
+                    variant="link"
+                    onClick={() => {
+                      loadPostText();
+                      handleShow();
+                    }}
+                  >
                     <i className="bi bi-pencil"></i> Edit Post
                   </Button>
                 </ListGroup.Item>
@@ -146,6 +187,10 @@ const handleDelete = async () => {
               value={post.text}
               onChange={(e) => setPost({ text: e.target.value })}
             />
+          </Form.Group>
+          <Form.Group controlId="formUploadPostPic" className="mb-3">
+            <Form.Label>Upload file</Form.Label>
+            <Form.Control type="file" />
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
