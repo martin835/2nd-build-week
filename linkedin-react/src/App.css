@@ -258,6 +258,7 @@
   left: 30px;
   border-radius: 75px;
   border: 4px solid white;
+  cursor: pointer;
 }
 
 .martin-profile-hero-thumbnail-image {
