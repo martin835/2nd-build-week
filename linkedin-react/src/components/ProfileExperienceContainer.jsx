@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 function ProfileExperienceContainer() {
   const params = useParams();
-  
+
 
   const [experiences, setExperiences] = useState(null);
   const [newExperience, setNewExperience] = useState({
@@ -27,8 +27,7 @@ function ProfileExperienceContainer() {
 
   const loadExperiences = async () => {
     let user = params.userId ? params.userId : "62134b69be40b50015b6c935";
-    console.log("hooyyaaaaa" + params.userId);
- 
+
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
@@ -100,7 +99,7 @@ function ProfileExperienceContainer() {
   };
 
   const editJob = async (id) => {
-    setLgShow(true);  
+    setLgShow(true);
     setIdOfExperience(id);
     let user = params.userId;
     //5fc4af46b708c200175de88f
@@ -206,6 +205,38 @@ function ProfileExperienceContainer() {
       console.log(error);
     }
   };
+
+  const uploadExperiencePicture = async (e) => {
+    e.preventDefault();
+    console.log(idOfExperience);
+    const inpFile = document.getElementById("formUploadExperiencePic");
+    const formData = new FormData();
+    formData.append("experience", inpFile.files[0]);
+    console.log(inpFile.files[0]);
+
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/62134b69be40b50015b6c935/experiences/${idOfExperience}/picture`,
+        {
+          method: "POST",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjEzNGI2OWJlNDBiNTAwMTViNmM5MzUiLCJpYXQiOjE2NDU0MzE2NTcsImV4cCI6MTY0NjY0MTI1N30.sW4qGqsabPColujp6kpA3P6pfCQ-VN9D8e5WEW1RdTI",
+          },
+          body: formData,
+        }
+      );
+      if (response.ok) {
+        let data = await response.json();
+        console.log(data);
+        loadExperiences();
+      } else {
+        alert("something went wrong :(");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className="p-3 bg-white mt-3 mb-5 martin-profile-experience-container">
@@ -357,6 +388,12 @@ function ProfileExperienceContainer() {
                 }
               />
             </Form.Group>
+            {editMode && (
+              <Form.Group controlId="formUploadExperiencePic" className="mb-3">
+                <Form.Label>Upload file</Form.Label>
+                <Form.Control type="file" />
+              </Form.Group>
+            )}
           </Modal.Body>
           <Modal.Footer>
             {editMode ? (
@@ -372,7 +409,7 @@ function ProfileExperienceContainer() {
                   variant="primary"
                   type="button"
                   className="martin-profile-main-btn mb-2 mb-lg-0"
-                  onClick={() => handleEdit()}
+                  onClick={(e) => { uploadExperiencePicture(e); handleEdit() }}
                 >
                   Edit Job
                 </Button>
