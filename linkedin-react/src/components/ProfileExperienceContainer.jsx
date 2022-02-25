@@ -235,7 +235,6 @@ function ProfileExperienceContainer() {
   };
 
 
-
   return (
     <div className="p-3 bg-white mt-3 mb-5 martin-profile-experience-container">
       <div className="d-flex mb-4">
@@ -272,7 +271,7 @@ function ProfileExperienceContainer() {
             id={experience._id}
             company={experience.company}
             startDate={experience.startDate}
-            endData={experience.endDate}
+            endDate={experience.endDate}
             description={experience.description}
             area={experience.area}
             image={experience.image}
