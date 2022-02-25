@@ -7,7 +7,7 @@ function OneExperienceCard(props) {
         <Col xs={2} mx-2>
           <div>
             <img
-              className="martin-profile-experience-thumbnail-image mr-2"
+              className="martin-profile-experience-thumbnail-image mr-0"
               src={
                 props.image
                   ? props.image
@@ -19,7 +19,7 @@ function OneExperienceCard(props) {
         </Col>
         <Col xs={10} className="px-0">
           <Row>
-            <Col xs={10}>
+            <Col xs={10} className="px-0">
               <h5 className="mb-0">{props.role}</h5>
               <div>{props.company}</div>
               <div className="text-secondary">
@@ -39,7 +39,7 @@ function OneExperienceCard(props) {
               )}
             </Col>
           </Row>
-          <p className="mt-2">{props.description}</p>
+          <p className="mt-2 px-0">{props.description}</p>
         </Col>
       </Row>
       <hr />
