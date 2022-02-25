@@ -110,21 +110,23 @@ function ProfileMainHero() {
             <p className="martin-color-link-profile">
               <strong>500+ connections</strong>
             </p>
-            <div className="profile-hero-btns">
-              <Button
-                variant="primary"
-                className="martin-profile-main-btn mb-2 mb-lg-0"
-              >
-                Open to
-              </Button>
-              <Button
-                variant="outline-primary"
-                className="martin-profile-outline-btn mb-2 mb-lg-0"
-              >
-                Add profile section
-              </Button>
-              <Button variant="outline-secondary">More...</Button>
-            </div>
+            {!params.userId && (
+              <div className="profile-hero-btns">
+                <Button
+                  variant="primary"
+                  className="martin-profile-main-btn mb-2 mb-lg-0"
+                >
+                  Open to
+                </Button>
+                <Button
+                  variant="outline-primary"
+                  className="martin-profile-outline-btn mb-2 mb-lg-0"
+                >
+                  Add profile section
+                </Button>
+                <Button variant="outline-secondary">More...</Button>
+              </div>
+            )}
           </Col>
 
           <Col xs={5}>
