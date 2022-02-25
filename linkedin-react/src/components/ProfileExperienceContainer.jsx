@@ -234,24 +234,33 @@ function ProfileExperienceContainer() {
     }
   };
 
+
+
   return (
     <div className="p-3 bg-white mt-3 mb-5 martin-profile-experience-container">
       <div className="d-flex mb-4">
         <h4 className="mr-auto">Experience</h4>
-        {!editMode && (
-          <div
-            className="martin-profile-icon-large mr-4"
-            onClick={() => setLgShow(true)}
-          >
-            <i className="bi bi-plus-lg"></i>
-          </div>
+
+        {params.userId ? (
+          " "
+        ) : (
+          <>
+            {!editMode && (
+              <div
+                className="martin-profile-icon-large mr-4"
+                onClick={() => setLgShow(true)}
+              >
+                <i className="bi bi-plus-lg"></i>
+              </div>
+            )}
+            <div
+              className="martin-profile-icon-large mr-4"
+              onClick={() => setEditMode(!editMode)}
+            >
+              <i className="bi bi-pencil"></i>
+            </div>
+          </>
         )}
-        <div
-          className="martin-profile-icon-large mr-4"
-          onClick={() => setEditMode(!editMode)}
-        >
-          <i className="bi bi-pencil"></i>
-        </div>
       </div>
       {experiences &&
         experiences.map((experience) => (
@@ -289,7 +298,7 @@ function ProfileExperienceContainer() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="modal-add-new-experience">
-            Add Experience
+            {editMode ? "Edit Experience" : "Add Experience"}
           </Modal.Title>
         </Modal.Header>
         <Form onSubmit={(e) => submitNewJob(e)}>

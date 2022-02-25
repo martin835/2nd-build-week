@@ -254,7 +254,7 @@
   background-position: center 45%;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   height: 30vh;
   position: relative;
 }
@@ -347,10 +347,12 @@
   border-radius: 45px !important;
 }
 
-.martin-start-post-pic {
+.martin-start-post-pic > img {
+  object-fit: cover ;
   border-radius: 65px;
-  height: 80px;
-  width: 80x;
+  overflow: hidden;
+  height: 75px;
+  width: 75px;
 }
 
 .martin-post-container {
