@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 function ProfileExperienceContainer() {
   const params = useParams();
 
-
   const [experiences, setExperiences] = useState(null);
   const [newExperience, setNewExperience] = useState({
     role: "",
@@ -16,7 +15,7 @@ function ProfileExperienceContainer() {
     description: "",
     area: "",
   });
-  const [oneExperience, setOneExperience] = useState(null);
+  // const [oneExperience, setOneExperience] = useState(null);
   const [lgShow, setLgShow] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [idOfExperience, setIdOfExperience] = useState(null);
@@ -31,8 +30,8 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-        user +
-        "/experiences",
+          user +
+          "/experiences",
         {
           method: "GET",
           headers: {
@@ -64,8 +63,8 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-        user +
-        "/experiences",
+          user +
+          "/experiences",
 
         {
           method: "POST",
@@ -106,10 +105,9 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-
-        user +
-        "/experiences/" +
-        id,
+          user +
+          "/experiences/" +
+          id,
 
         {
           method: "GET",
@@ -146,10 +144,9 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-
-        user +
-        "/experiences/" +
-        idOfExperience,
+          user +
+          "/experiences/" +
+          idOfExperience,
 
         {
           method: "PUT",
@@ -181,10 +178,9 @@ function ProfileExperienceContainer() {
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/" +
-
-        user +
-        "/experiences/" +
-        idOfExperience,
+          user +
+          "/experiences/" +
+          idOfExperience,
 
         {
           method: "DELETE",
@@ -236,7 +232,7 @@ function ProfileExperienceContainer() {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div className="p-3 bg-white mt-3 mb-5 martin-profile-experience-container">
@@ -409,7 +405,10 @@ function ProfileExperienceContainer() {
                   variant="primary"
                   type="button"
                   className="martin-profile-main-btn mb-2 mb-lg-0"
-                  onClick={(e) => { uploadExperiencePicture(e); handleEdit() }}
+                  onClick={(e) => {
+                    uploadExperiencePicture(e);
+                    handleEdit();
+                  }}
                 >
                   Edit Job
                 </Button>
