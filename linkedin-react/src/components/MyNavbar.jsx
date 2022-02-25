@@ -51,6 +51,7 @@ const MyNavbar = ({ query, setQuery }) => {
             type="text"
             value={query2}
             onChange={(e) => setQuery2(e.target.value)}
+            onBlur={(e)=> setQuery2("")}
             onKeyDown={(e) => handleKeyDown(e)}
             placeholder="Search"
             className="mr-sm-2 border-0 ml-3"
