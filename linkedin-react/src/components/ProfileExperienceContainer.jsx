@@ -44,7 +44,11 @@ function ProfileExperienceContainer() {
       if (response.ok) {
         let data = await response.json();
         console.log(data);
-        setExperiences(data);
+        setExperiences(
+          data.sort(function (a, b) {   
+            return new Date(b.startDate) - new Date(a.startDate);
+          })
+        );
       } else {
         alert("something went wrong :(");
       }

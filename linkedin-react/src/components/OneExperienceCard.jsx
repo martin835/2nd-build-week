@@ -1,14 +1,16 @@
-import { Row, Col } from "react-bootstrap";
+
+import { Row, Col, Container } from "react-bootstrap";
 import moment from "moment";
+
 
 function OneExperienceCard(props) {
   return (
     <>
-      <Row className="mb-3">
-        <Col xs={2} mx-2>
-          <div>
+      <Container className="mb-3">
+        <Row>
+          <Col xs={2}>
             <img
-              className="martin-profile-experience-thumbnail-image mr-2"
+              className="martin-profile-experience-thumbnail-image mr-0"
               src={
                 props.image
                   ? props.image
@@ -16,35 +18,38 @@ function OneExperienceCard(props) {
               }
               alt=""
             />
-          </div>
-        </Col>
-        <Col xs={10} className="px-0">
-          <Row>
-            <Col xs={10}>
-              <h5 className="mb-0">{props.role}</h5>
-              <div>{props.company}</div>
-              <div className="text-secondary">
-                {moment(props.startDate).utc().format("YYYY-MM-DD")} -{" "}
-                {moment(props.endDate).utc().format("YYYY-MM-DD")
-                  ? moment(props.endDate).utc().format("YYYY-MM-DD")
-                  : "present"}
-              </div>
-              <div className="text-secondary">{props.area}</div>
-            </Col>
-            <Col xs={2}>
-              {props.editMode && (
-                <div
-                  className="martin-profile-icon-large mr-4"
-                  onClick={() => props.editJob(props.id)}
-                >
-                  <i className="bi bi-pencil"></i>
+          </Col>
+
+          <Col xs={10} className="px-0">
+            <Row>
+              <Col xs={10}>
+                <h5 className="mb-0">{props.role}</h5>
+                <div>{props.company}</div>
+                <div className="text-secondary">
+                  {console.log(props.startDate)}
+                  {moment(props.startDate).utc().format("YYYY-MM-DD")} -{" "}
+                  {props.endDate !== null
+                    ? moment(props.endDate).utc().format("YYYY-MM-DD")
+                    : "present"}
                 </div>
-              )}
-            </Col>
-          </Row>
-          <p className="mt-2">{props.description}</p>
-        </Col>
-      </Row>
+                <div className="text-secondary">{props.area}</div>
+                <p className="mt-2 px-0">{props.description}</p>
+              </Col>
+            
+              <Col xs={2}>
+                {props.editMode && (
+                  <div
+                    className="martin-profile-icon-large mr-4"
+                    onClick={() => props.editJob(props.id)}
+                  >
+                    <i className="bi bi-pencil"></i>
+                  </div>
+                )}
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
       <hr />
     </>
   );
