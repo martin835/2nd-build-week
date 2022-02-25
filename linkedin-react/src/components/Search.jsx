@@ -66,12 +66,13 @@ const Search = ({ searchedQuery, setQuery }) => {
           fontSize: "1rem",
         }}
       >
-        {/* {arrayOfPeople.length < 1 ? (
-          <p>No results to show</p>
+        {/* {arrayOfPeople.filter((p) =>
+          p.name.toLowerCase().includes(searchedQuery.toLowerCase())
+        ) ? (
+          <p></p>
         ) : (
-          <p>See all people Results</p>
+          <p>No results to show</p>
         )} */}
-        See all people Results
       </Row>
     </Container>
   );

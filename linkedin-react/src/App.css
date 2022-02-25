@@ -294,6 +294,15 @@
 .martin-profile-icon-large {
   font-size: 1rem !important;
 }
+.martin-profile-icon-large > i {
+  padding: 10px;
+}
+.martin-profile-icon-large :hover {
+  font-size: 1rem !important;
+  background-color: rgb(200, 193, 193);
+  border-radius: 50%;
+  cursor: pointer;
+}
 
 .martin-profile-post-button {
   background-color: transparent !important;

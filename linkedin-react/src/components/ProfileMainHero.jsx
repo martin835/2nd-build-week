@@ -1,8 +1,7 @@
 import { Row, Col, Button, Modal, Form } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
 
-import { useParams } from "react-router-dom"
-
+import { useParams } from "react-router-dom";
 
 function ProfileMainHero() {
   const params = useParams();
@@ -13,7 +12,7 @@ function ProfileMainHero() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-   const inputFile = useRef(null);
+  const inputFile = useRef(null);
 
   useEffect(() => {
     loadInfo();
@@ -47,7 +46,7 @@ function ProfileMainHero() {
     }
   };
 
-  const uploadProfilePicture = async  (e) => {
+  const uploadProfilePicture = async (e) => {
     e.preventDefault();
     const inpFile = document.getElementById("formUploadProfilePic");
     const formData = new FormData();
@@ -76,9 +75,7 @@ function ProfileMainHero() {
     } catch (error) {
       console.log(error);
     }
-
-  }
-
+  };
 
   return (
     <>
@@ -89,7 +86,12 @@ function ProfileMainHero() {
             backgroundImage: "url(" + require("../assets/hero-pic.jpeg") + ")",
           }}
         >
-          <img src={info.image} alt="" onClick={handleShow} />
+          <img
+            src={info.image}
+            alt=""
+            onClick={handleShow}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <Row className="mt-5 p-3">
           <Col xs={7}>
