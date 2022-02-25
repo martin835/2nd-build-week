@@ -1,4 +1,5 @@
 import { Row, Col } from "react-bootstrap";
+import moment from "moment";
 
 function OneExperienceCard(props) {
   return (
@@ -23,8 +24,11 @@ function OneExperienceCard(props) {
               <h5 className="mb-0">{props.role}</h5>
               <div>{props.company}</div>
               <div className="text-secondary">
-                {props.startDate} - {props.endDate ? props.endDate : "now"} 6
-                months
+                {moment(props.startDate).utc().format("YYYY-MM-DD")} -{" "}
+                {moment(props.endDate).utc().format("YYYY-MM-DD") ||
+                props.endDate === null
+                  ? moment(props.endDate).utc().format("YYYY-MM-DD")
+                  : "present"}
               </div>
               <div className="text-secondary">{props.area}</div>
             </Col>
