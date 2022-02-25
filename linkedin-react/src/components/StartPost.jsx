@@ -4,9 +4,42 @@ import { useState, useEffect } from "react";
 const StartPost = (props) => {
   const [newPost, setNewPost] = useState({ text: "" });
   const [show, setShow] = useState(false);
+  const [info, setInfo] = useState({});
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+   useEffect(() => {
+     loadInfo();
+   }, []);
+
+   const loadInfo = async () => {
+     let user = "me";
+
+     //5fc4af46b708c200175de88f
+     try {
+       let response = await fetch(
+         "https://striveschool-api.herokuapp.com/api/profile/" + user,
+         {
+           method: "GET",
+           headers: {
+             "Content-Type": "application/json",
+             Authorization:
+               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjEzNGI2OWJlNDBiNTAwMTViNmM5MzUiLCJpYXQiOjE2NDU0MzE2NTcsImV4cCI6MTY0NjY0MTI1N30.sW4qGqsabPColujp6kpA3P6pfCQ-VN9D8e5WEW1RdTI",
+           },
+         }
+       );
+       if (response.ok) {
+         let data = await response.json();
+         console.log(data);
+         setInfo(data);
+       } else {
+         alert("something went wrong :(");
+       }
+     } catch (error) {
+       console.log(error);
+     }
+   };
   const handlePost = async () => {
     try {
       let response = await fetch(
@@ -41,11 +74,12 @@ const StartPost = (props) => {
     <div className="bg-white martin-profile-experience-container mt-4">
       <Row className=" p-3">
         <Col xs={2}>
-          <img
-            className="img-fluid martin-start-post-pic"
-            src={require("../assets/placeholder.jpeg")}
-            alt="profile pic"
-          />
+          <div className="martin-start-post-pic">
+            <img
+              src={info.image}
+              alt="profile pic"
+            />
+          </div>
         </Col>
         <Col xs={10}>
           <Button
