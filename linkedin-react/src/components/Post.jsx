@@ -47,10 +47,17 @@ const Post = ({ data, ThreeDot, editable }) => {
       <Row>
         <Col>
           <div>
-            <div className="w-100 h-100">
-              <img src={data.image} alt="" />
+            <div>
+              <img className="w-100 h-100 mb-3" src={data.image} alt="" />
             </div>
-            <h6>{data.text}</h6>
+            <div>
+              <h6
+                className="w-100 h-100 mb-2"
+                style={{ wordWrap: "break-word" }}
+              >
+                {data.text}
+              </h6>
+            </div>
           </div>
         </Col>
       </Row>

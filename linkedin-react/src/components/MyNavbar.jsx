@@ -27,9 +27,11 @@ const MyNavbar = ({ query, setQuery }) => {
   const navigate = useNavigate();
 
   return (
-    <Navbar bg="light" expand="lg" className="py-0 my-navbar">
+    <Navbar bg="light" expand="lg" className="py-0 my-navbar" sticky="top">
       <Container>
-        <BsLinkedin className="ali-linkedIn-logo mr-2" />
+        <Link to={"/"}>
+          <BsLinkedin className="ali-linkedIn-logo mr-2" />
+        </Link>
         <div
           style={{
             backgroundColor: "#EEF4F1",

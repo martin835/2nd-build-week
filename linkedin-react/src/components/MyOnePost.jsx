@@ -150,7 +150,9 @@ function MyOnePost(props) {
         <Col>
           <div className="martin-post-container">
             {loading ? (
-              <Spinner animation="border" variant="primary" />
+              <div className=" w-100 d-flex justify-content-center align-items-center">
+                <Spinner animation="border" variant="primary" />
+              </div>
             ) : (
               <Post
                 ThreeDot={ThreeDot}

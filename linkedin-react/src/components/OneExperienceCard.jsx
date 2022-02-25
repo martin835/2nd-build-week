@@ -4,7 +4,7 @@ function OneExperienceCard(props) {
   return (
     <>
       <Row className="mb-3">
-        <Col xs={1}>
+        <Col xs={2} mx-2>
           <div>
             <img
               className="martin-profile-experience-thumbnail-image mr-2"
@@ -17,7 +17,7 @@ function OneExperienceCard(props) {
             />
           </div>
         </Col>
-        <Col xs={11}>
+        <Col xs={10} className="px-0">
           <Row>
             <Col xs={10}>
               <h5 className="mb-0">{props.role}</h5>
