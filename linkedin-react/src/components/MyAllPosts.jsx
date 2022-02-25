@@ -39,7 +39,9 @@ function MyAllPosts() {
   return (
     <div className="p-3 bg-white mt-3 mb-5 martin-profile-experience-container">
       {loading ? (
-        <Spinner animation="border" variant="primary" />
+        <div className=" w-100 d-flex justify-content-center align-items-center">
+          <Spinner animation="border" variant="primary" />
+        </div>
       ) : (
         allPosts
           .filter((post) => post.username === "Martin1234")

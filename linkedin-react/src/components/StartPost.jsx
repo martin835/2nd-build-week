@@ -62,7 +62,7 @@ const StartPost = (props) => {
           xs={3}
           className=" d-flex justify-content-center align-items-center "
         >
-          <Button className="martin-profile-post-button">
+          <Button className="martin-profile-post-button px-0">
             <i className="bi bi-image"></i>
             <span className="ml-1" style={{ fontSize: "1rem" }}>
               Photo
@@ -73,7 +73,7 @@ const StartPost = (props) => {
           xs={3}
           className=" d-flex justify-content-center align-items-center "
         >
-          <Button className="martin-profile-post-button">
+          <Button className="martin-profile-post-button px-0">
             <i className="bi bi-camera-video"></i>
             <span className="ml-1" style={{ fontSize: "1rem" }}>
               Video
@@ -84,9 +84,12 @@ const StartPost = (props) => {
           xs={3}
           className=" d-flex justify-content-center align-items-center "
         >
-          <Button className="martin-profile-post-button">
+          <Button className="martin-profile-post-button px-0">
             <i className="bi bi-calendar-date"></i>
-            <span className="ml-1" style={{ fontSize: "1rem" }}>
+            <span
+              className="ml-1"
+              style={{ fontSize: "1rem", fontWeight: "400" }}
+            >
               Event
             </span>
           </Button>
@@ -95,7 +98,7 @@ const StartPost = (props) => {
           xs={3}
           className=" d-flex justify-content-center align-items-center "
         >
-          <Button className="martin-profile-post-button">
+          <Button className="martin-profile-post-button px-0">
             <i className="bi bi-text-paragraph"></i>
             <span className="ml-1" style={{ fontSize: "1rem" }}>
               Article

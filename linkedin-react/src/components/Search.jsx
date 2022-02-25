@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Spinner } from "react-bootstrap";
 import SearchCard from "./SearchCard";
 
-const Search = ({ searchedQuery }) => {
+const Search = ({ searchedQuery, setQuery }) => {
   const searchQuery = async () => {
     console.log("this is the search" + searchedQuery);
     try {
@@ -57,8 +57,6 @@ const Search = ({ searchedQuery }) => {
               );
             })
         )}
-
-        {console.log("who is first")}
       </Row>
       <Row
         className="justify-content-center "
@@ -68,6 +66,11 @@ const Search = ({ searchedQuery }) => {
           fontSize: "1rem",
         }}
       >
+        {/* {arrayOfPeople.length < 1 ? (
+          <p>No results to show</p>
+        ) : (
+          <p>See all people Results</p>
+        )} */}
         See all people Results
       </Row>
     </Container>

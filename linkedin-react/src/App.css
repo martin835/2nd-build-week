@@ -258,7 +258,6 @@
   left: 30px;
   border-radius: 75px;
   border: 4px solid white;
-  cursor: pointer;
 }
 
 .martin-profile-hero-thumbnail-image {
@@ -280,21 +279,13 @@
   font-size: 1rem !important;
 }
 
-.martin-profile-icon-large > i {
-  /* padding: 10px; */
-}
-
-/* .martin-profile-icon-large:hover {
-  cursor: pointer;
-  background-color: lightgray;
-  border-radius: 40px;
-} */
-
 .martin-profile-post-button {
   background-color: transparent !important;
   border: none !important;
   display: flex;
   color: black !important;
+  padding: 0;
+  /* font-size: 0.8rem !important; */
 }
 .martin-profile-post-button:hover {
   background-color: rgba(146, 141, 141, 0.468) !important;
