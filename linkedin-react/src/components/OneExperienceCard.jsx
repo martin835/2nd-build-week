@@ -1,16 +1,14 @@
-
 import { Row, Col } from "react-bootstrap";
 import moment from "moment";
-
 
 function OneExperienceCard(props) {
   return (
     <>
-      <Container className="mb-3">
-        <Row>
-          <Col xs={2}>
+      <Row className="mb-3">
+        <Col xs={2} mx-2>
+          <div>
             <img
-              className="martin-profile-experience-thumbnail-image mr-0"
+              className="martin-profile-experience-thumbnail-image mr-2"
               src={
                 props.image
                   ? props.image
@@ -18,7 +16,6 @@ function OneExperienceCard(props) {
               }
               alt=""
             />
-
           </div>
         </Col>
         <Col xs={10} className="px-0">
@@ -28,8 +25,7 @@ function OneExperienceCard(props) {
               <div>{props.company}</div>
               <div className="text-secondary">
                 {moment(props.startDate).utc().format("YYYY-MM-DD")} -{" "}
-                {moment(props.endDate).utc().format("YYYY-MM-DD") ||
-                props.endDate === null
+                {moment(props.endDate).utc().format("YYYY-MM-DD")
                   ? moment(props.endDate).utc().format("YYYY-MM-DD")
                   : "present"}
               </div>
@@ -42,25 +38,13 @@ function OneExperienceCard(props) {
                   onClick={() => props.editJob(props.id)}
                 >
                   <i className="bi bi-pencil"></i>
-
                 </div>
-                <div className="text-secondary">{props.area}</div>
-              </Col>
-              <Col xs={2}>
-                {props.editMode && (
-                  <div
-                    className="martin-profile-icon-large mr-4"
-                    onClick={() => props.editJob(props.id)}
-                  >
-                    <i className="bi bi-pencil"></i>
-                  </div>
-                )}
-              </Col>
-              <p className="mt-2 px-0">{props.description}</p>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
+              )}
+            </Col>
+          </Row>
+          <p className="mt-2">{props.description}</p>
+        </Col>
+      </Row>
       <hr />
     </>
   );
