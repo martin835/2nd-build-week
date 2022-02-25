@@ -26,7 +26,7 @@ function MyAllPosts() {
       if (response.ok) {
         let data = await response.json();
 
-        setAllPosts(data);
+        setAllPosts(data.reverse());
         setLoading(false);
       } else {
         alert("something went wrong :(");
